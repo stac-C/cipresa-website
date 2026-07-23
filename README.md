@@ -201,4 +201,5 @@ vercel
 7. In the Nokash dashboard, point the callback/webhook configuration at `https://<your-domain>/api/payments/nokash/webhook` (production keys only — sandbox never calls back, the app polls instead; see `src/app/api/payments/nokash/status/route.ts`).
 8. Point Supabase Auth's site URL / redirect URLs at your production domain so email confirmation and password-reset links resolve correctly.
 #   c i p r e s a - w e b s i t e  
+ #   c i p r e s a - w e b s i t e  
  
