@@ -1,0 +1,40 @@
+
+> cipresa-platform@2.0.0 build
+> next build
+
+  ▲ Next.js 14.2.35
+  - Environments: .env.local
+  - Experiments (use with caution):
+    · instrumentationHook
+
+   Creating an optimized production build ...
+> [PWA] Compile server
+> [PWA] Compile server
+> [PWA] Compile client (static)
+> [PWA] Auto register service worker with: f:\CIPRESA\cipresa-platform\node_modules\next-pwa\register.js
+> [PWA] Service worker: f:\CIPRESA\cipresa-platform\public\sw.js
+> [PWA]   url: /sw.js
+> [PWA]   scope: /
+request to https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap failed, reason: getaddrinfo EAI_AGAIN fonts.googleapis.com
+
+Retrying 1/3...
+request to https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap failed, reason: getaddrinfo EAI_AGAIN fonts.googleapis.com
+
+Retrying 2/3...
+request to https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap failed, reason: getaddrinfo EAI_AGAIN fonts.googleapis.com
+
+Retrying 3/3...
+FetchError: request to https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap failed, reason: getaddrinfo EAI_AGAIN fonts.googleapis.com
+    at ClientRequest.<anonymous> (f:\CIPRESA\cipresa-platform\node_modules\next\dist\compiled\node-fetch\index.js:1:66160)
+    at ClientRequest.emit (node:events:509:28)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:509:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'EAI_AGAIN',
+  code: 'EAI_AGAIN'
+}
+Terminer le programme de commandes (O/N) ? ^C

@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la public/workbox-4754cb34.js)",
+      "Bash(ls -la next-dev.err.log next-dev.out.log)",
+      "Bash(file \"public/images/Downloads - Shortcut.lnk\")",
+      "WebSearch",
+      "WebFetch(domain:nokash.co)",
+      "WebFetch(domain:www.scribd.com)",
+      "Bash(grep -vE \"^\\\\s*$\")",
+      "Bash(npx tsc *)",
+      "Bash(git rm *)",
+      "Bash(ls src/components/sections/)",
+      "Bash(sed -i \"s/'XOF'/'XAF'/g; s/0 XOF payin/0 XAF payin/g\" src/lib/actions/checkout.ts)",
+      "Bash(sed -i \"s/'XOF'/'XAF'/g\" src/lib/actions/admin/courses.ts src/lib/actions/admin/plants.ts src/lib/actions/admin/products.ts src/lib/utils/data.ts)",
+      "Bash(sed -i \"s/\\(XOF, 0 = gratuit\\)/\\(XAF, 0 = gratuit\\)/\" src/components/admin/course-form.tsx)",
+      "Bash(sed -i \"s/\\(XOF, 0 si non applicable\\)/\\(XAF, 0 si non applicable\\)/\" src/components/admin/plant-form.tsx)",
+      "Bash(sed -i \"s/\\(XOF\\)/\\(XAF\\)/\" src/components/admin/product-form.tsx)",
+      "Bash(npx vitest *)",
+      "Bash(rm -rf .next)",
+      "Bash(npm run *)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(curl -s \"http://localhost:3001/\")",
+      "Bash(curl -s -o /tmp/checkout_resp.html -w \"%{http_code}\\\\n\" http://localhost:3000/checkout)",
+      "Read(//tmp/**)"
+    ]
+  }
+}
