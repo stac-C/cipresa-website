@@ -202,4 +202,5 @@ vercel
 8. Point Supabase Auth's site URL / redirect URLs at your production domain so email confirmation and password-reset links resolve correctly.
 #   c i p r e s a - w e b s i t e  
  #   c i p r e s a - w e b s i t e  
+ #   c i p r e s a - w e b s i t e  
  
