@@ -93,17 +93,17 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
 
   return (
     <PageTransition>
-      <article>
-        <div className="relative h-[50vh] min-h-[320px] bg-gradient-to-b from-gray-950 to-gray-900 overflow-hidden">
+      <article className="bg-white dark:bg-slate-950">
+        <div className="relative h-[50vh] min-h-[320px] overflow-hidden bg-gradient-to-b from-gray-950 to-gray-900">
           <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: `url(${post.image})` }} />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent" />
-          <div className="relative h-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-12">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm text-white/60 hover:text-white transition-colors mb-4">
+          <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-end px-4 pb-12 pt-20 sm:px-6 lg:px-8">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl">
+              <Link href="/blog" className="mb-4 inline-flex items-center gap-1.5 text-sm text-white/60 transition-colors hover:text-white">
                 <ChevronLeft className="w-4 h-4" /> Retour au blog
               </Link>
               <Badge variant="info" size="md" className="mb-4">{post.category}</Badge>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">{post.title}</h1>
+              <h1 className="mb-4 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">{post.title}</h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-white/60">
                 <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" /> {formatDate(post.publishedAt, 'long')}</span>
                 <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" /> {post.readTime}</span>
@@ -129,13 +129,14 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid lg:grid-cols-[1fr_280px] gap-12">
-            <AnimatedSection>
-              <div className="prose prose-lg max-w-none">{renderContent(post.content)}</div>
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px] xl:gap-12">
+            <AnimatedSection className="min-w-0">
+              <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6 lg:p-8">
+                <div className="prose prose-lg max-w-none prose-headings:scroll-mt-24 prose-a:text-cipresa-600">{renderContent(post.content)}</div>
 
               {post.tags.length > 0 && (
-                <div className="flex flex-wrap items-center gap-2 mt-10 pt-6 border-t border-gray-100 dark:border-gray-800">
+                <div className="mt-10 flex flex-wrap items-center gap-2 border-t border-gray-100 pt-6 dark:border-gray-800">
                   <Tag className="w-4 h-4 text-gray-400" />
                   {post.tags.map((tag) => (
                     <Badge key={tag} variant="default" size="sm">{tag}</Badge>
@@ -143,8 +144,8 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
                 </div>
               )}
 
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <div className="flex items-center gap-2">
+              <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
                   <label htmlFor="share-platform" className="text-sm font-medium text-gray-700 dark:text-gray-300">
                     Plateforme
                   </label>
@@ -168,17 +169,22 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
               </div>
 
               {relatedPosts.length > 0 && (
-                <div className="mt-16 pt-8 border-t border-gray-100 dark:border-gray-800">
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Articles similaires</h2>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="mt-16 border-t border-gray-100 pt-8 dark:border-gray-800">
+                  <div className="mb-6 flex items-center justify-between gap-3">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Articles similaires</h2>
+                    <Link href="/blog" className="text-sm font-medium text-cipresa-600 transition hover:text-cipresa-700">
+                      Voir tout le blog
+                    </Link>
+                  </div>
+                  <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
                     {relatedPosts.map((rp) => (
                       <Link key={rp.id} href={`/blog/${rp.slug}`} className="group block">
-                        <div className="rounded-xl overflow-hidden bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700/50 h-full hover:shadow-lg transition-all duration-300">
+                        <div className="h-full overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-700/50 dark:bg-gray-800/50">
                           <div className="h-40 bg-cover bg-center" style={{ backgroundImage: `url(${rp.image})` }} />
                           <div className="p-4">
                             <Badge variant="info" size="sm" className="mb-2">{rp.category}</Badge>
-                            <h3 className="font-semibold text-gray-900 dark:text-white text-sm line-clamp-2 group-hover:text-cipresa-600 transition-colors">{rp.title}</h3>
-                            <p className="text-xs text-gray-500 mt-1">{formatDate(rp.publishedAt)}</p>
+                            <h3 className="text-sm font-semibold text-gray-900 transition-colors group-hover:text-cipresa-600 dark:text-white line-clamp-2">{rp.title}</h3>
+                            <p className="mt-1 text-xs text-gray-500">{formatDate(rp.publishedAt)}</p>
                           </div>
                         </div>
                       </Link>
@@ -186,31 +192,32 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
                   </div>
                 </div>
               )}
+              </div>
             </AnimatedSection>
 
-            <aside className="space-y-6">
-              <AnimatedSection delay={0.1} className="sticky top-28">
-                <div className="p-6 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700/50">
-                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">À propos de l&apos;auteur</h3>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-cipresa-500 flex items-center justify-center text-white font-bold text-sm">
+            <aside className="space-y-6 lg:pt-2">
+              <AnimatedSection delay={0.1} className="lg:sticky lg:top-24">
+                <div className="rounded-2xl border border-gray-100 bg-gray-50 p-5 dark:border-gray-700/50 dark:bg-gray-800/50 sm:p-6">
+                  <h3 className="mb-4 text-sm font-semibold text-gray-900 dark:text-white">À propos de l&apos;auteur</h3>
+                  <div className="mb-4 flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cipresa-500 text-sm font-bold text-white">
                       {post.author.charAt(0)}
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900 dark:text-white text-sm">{post.author}</p>
+                      <p className="text-sm font-medium text-gray-900 dark:text-white">{post.author}</p>
                       <p className="text-xs text-gray-500">Expert CIPRESA</p>
                     </div>
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                  <p className="text-xs leading-relaxed text-gray-500 dark:text-gray-400">
                     Expert chez CIPRESA Consulting, dédié à la formation et l&apos;accompagnement des agriculteurs pour une agriculture performante et durable en Afrique.
                   </p>
                 </div>
 
-                <div className="p-6 rounded-xl bg-gradient-to-br from-cipresa-600 to-blue-800 text-white">
-                  <h3 className="font-bold text-lg mb-2">Devenir membre CIPRESA</h3>
-                  <p className="text-sm text-white/80 mb-4">Accédez à toutes nos formations, ressources et conseils d&apos;experts.</p>
+                <div className="rounded-2xl bg-gradient-to-br from-cipresa-600 to-blue-800 p-5 text-white shadow-sm sm:p-6">
+                  <h3 className="mb-2 text-lg font-bold">Devenir membre CIPRESA</h3>
+                  <p className="mb-4 text-sm text-white/80">Accédez à toutes nos formations, ressources et conseils d&apos;experts.</p>
                   <Link href="/auth/register">
-                    <Button fullWidth className="bg-white text-cipresa-700 hover:bg-gray-100 shadow-none">S&apos;inscrire gratuitement</Button>
+                    <Button fullWidth className="bg-white text-cipresa-700 shadow-none hover:bg-gray-100">S&apos;inscrire gratuitement</Button>
                   </Link>
                 </div>
               </AnimatedSection>
