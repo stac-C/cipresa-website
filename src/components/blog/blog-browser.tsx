@@ -12,12 +12,21 @@ import type { BlogPost } from '@/types';
 
 export function BlogBrowser({ posts }: { posts: BlogPost[] }) {
   const [searchQuery, setSearchQuery] = useState('');
+  const [activeCategory, setActiveCategory] = useState('Toutes');
+
+  const categories = useMemo(() => {
+    const unique = Array.from(new Set(posts.map((post) => post.category).filter(Boolean)));
+    return ['Toutes', ...unique];
+  }, [posts]);
 
   const filtered = useMemo(() => {
-    if (!searchQuery.trim()) return posts;
-    const q = searchQuery.toLowerCase();
-    return posts.filter((p) => p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q) || p.tags.some((t) => t.toLowerCase().includes(q)));
-  }, [posts, searchQuery]);
+    const q = searchQuery.trim().toLowerCase();
+    return posts.filter((post) => {
+      const matchesCategory = activeCategory === 'Toutes' || post.category === activeCategory;
+      const matchesQuery = !q || post.title.toLowerCase().includes(q) || post.category.toLowerCase().includes(q) || post.tags.some((tag) => tag.toLowerCase().includes(q));
+      return matchesCategory && matchesQuery;
+    });
+  }, [posts, searchQuery, activeCategory]);
 
   return (
     <PageTransition>
@@ -25,11 +34,25 @@ export function BlogBrowser({ posts }: { posts: BlogPost[] }) {
         <div className="bg-gradient-to-b from-cipresa-950 to-gray-950 py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
-              <Badge variant="success" className="mb-4">Blog</Badge>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Blog agricole</h1>
-              <p className="text-white/60 max-w-2xl mx-auto mb-8">
-                Actualités, conseils et guides pour une agriculture performante
+              <Badge variant="success" className="mb-4">Ressources & conseils</Badge>
+              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Blog agricole CIPRESA</h1>
+              <p className="text-white/60 max-w-3xl mx-auto mb-8 leading-8">
+                Retrouvez des articles pratiques, des analyses agricoles, des conseils d’experts et des bonnes pratiques pour renforcer la performance, la durabilité et la résilience de vos exploitations.
               </p>
+              <div className="grid gap-3 sm:grid-cols-3 max-w-4xl mx-auto mb-8">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-left backdrop-blur-sm">
+                  <div className="text-2xl font-bold text-white">{posts.length}</div>
+                  <div className="text-sm text-white/70">Articles publiés</div>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-left backdrop-blur-sm">
+                  <div className="text-2xl font-bold text-white">Agriculture</div>
+                  <div className="text-sm text-white/70">Conseils concrets</div>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-left backdrop-blur-sm">
+                  <div className="text-2xl font-bold text-white">Afrique</div>
+                  <div className="text-sm text-white/70">Contextes locaux</div>
+                </div>
+              </div>
               <div className="max-w-md mx-auto relative">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
@@ -45,6 +68,31 @@ export function BlogBrowser({ posts }: { posts: BlogPost[] }) {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="mb-8 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="rounded-3xl border border-cipresa-100 bg-cipresa-50/60 p-6">
+              <p className="mb-2 text-sm font-semibold text-cipresa-700">Pourquoi suivre le blog CIPRESA ?</p>
+              <h2 className="text-2xl font-bold text-slate-900">Des contenus pour pas seulement lire, mais agir.</h2>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                Chaque article combine les besoins du terrain, les méthodes d’accompagnement et les leviers de performance agricoles à l’échelle des exploitations africaines.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-slate-200 bg-white p-6">
+              <p className="mb-3 text-sm font-semibold text-slate-900">Filtres rapides</p>
+              <div className="flex flex-wrap gap-2">
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    type="button"
+                    onClick={() => setActiveCategory(category)}
+                    className={`rounded-full px-3 py-1.5 text-sm transition ${activeCategory === category ? 'bg-cipresa-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {filtered.length === 0 ? (
             <div className="text-center py-20">
               <Search className="w-16 h-16 text-gray-300 dark:text-gray-700 mx-auto mb-4" />

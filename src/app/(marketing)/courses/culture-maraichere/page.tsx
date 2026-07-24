@@ -1,15 +1,26 @@
 import type { Metadata } from 'next';
+import CourseCategoryPageTemplate from '../CourseCategoryPageTemplate';
 
 export const metadata: Metadata = {
-  title: 'Culture maraichere',
-  description: 'Formation : Culture maraîchère.',
+  title: 'Culture maraîchère | CIPRESA',
+  description:
+    'Formation sur la culture maraîchère : gestion des parcelles, planification de la production et techniques de valorisation.',
 };
 
 export default function CultureMaraicherePage() {
   return (
-    <main className="prose mx-auto py-12 px-5 sm:px-8">
-      <h1>Culture maraîchère</h1>
-      <p>Contenu de la formation « Culture maraîchère » à structurer.</p>
-    </main>
+    <CourseCategoryPageTemplate
+      title="Culture maraîchère"
+      intro="Cette formation vous accompagne dans la gestion d’un jardin, d’une petite exploitation maraîchère ou d’une unité de production intensive en vue d’optimiser la productivité."
+      level="Niveau intermédiaire"
+      outcomes={[
+        'Comprendre les cycles de production de légumes et cultures de rente.',
+        'Planifier les semis, plans de rotation et calendrier d’entretien.',
+        'Améliorer la qualité des récoltes et la gestion des intrants.',
+        'Développer une logique de production plus rentable et durable.',
+      ]}
+      imageTitle="Culture maraîchère"
+      imageDescription="Zone d’image prévue pour une parcelle maraîchère, une serre ou un plan de production."
+    />
   );
 }

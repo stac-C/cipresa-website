@@ -1,15 +1,26 @@
 import type { Metadata } from 'next';
+import CourseCategoryPageTemplate from '../CourseCategoryPageTemplate';
 
 export const metadata: Metadata = {
-  title: 'Culture perenne',
-  description: 'Formation : Culture pérenne.',
+  title: 'Culture pérenne | CIPRESA',
+  description:
+    'Formation dédiée aux cultures pérennes, leur gestion, leur entretien et leur contribution à une agriculture durable.',
 };
 
 export default function CulturePerennePage() {
   return (
-    <main className="prose mx-auto py-12 px-5 sm:px-8">
-      <h1>Culture pérenne</h1>
-      <p>Contenu de la formation « Culture pérenne » à structurer.</p>
-    </main>
+    <CourseCategoryPageTemplate
+      title="Culture pérenne"
+      intro="Cette catégorie de formation aborde la mise en place, l’entretien et la valorisation des cultures pérennes pour renforcer la durabilité des exploitations agricoles."
+      level="Niveau intermédiaire"
+      outcomes={[
+        'Comprendre les spécificités des cultures pérennes sur le long terme.',
+        'Mettre en œuvre des pratiques de gestion durable des arbres et plantations.',
+        'Évaluer les besoins en entretien, irrigation et protection.',
+        'Préparer une stratégie de production pérenne plus résiliente et rentable.',
+      ]}
+      imageTitle="Culture pérenne"
+      imageDescription="Zone d’image pour une plantation, un verger ou une illustration de production pérenne."
+    />
   );
 }

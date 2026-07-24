@@ -1,15 +1,12 @@
 import type { Metadata } from 'next';
+import ConseilAgricol from './ConseilAgricol';
 
 export const metadata: Metadata = {
-  title: 'Conseil agricole',
-  description: 'Service : Conseil agricole.',
+  title: 'Conseil agricole | CIPRESA',
+  description:
+    'Découvrez le service de conseil agricole de CIPRESA : diagnostic agronomique, recommandations, accompagnement et suivi pour améliorer la performance de vos exploitations.',
 };
 
 export default function ConseilAgricolePage() {
-  return (
-    <main className="prose mx-auto py-12 px-5 sm:px-8">
-      <h1>Conseil agricole</h1>
-      <p>Page service « Conseil agricole ». Contenu à structurer.</p>
-    </main>
-  );
+  return <ConseilAgricol />;
 }

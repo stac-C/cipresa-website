@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, ChevronLeft, Share2, Tag, User } from 'lucide-react';
@@ -47,7 +48,49 @@ interface BlogDetailViewProps {
   relatedPosts: BlogPost[];
 }
 
+type SharePlatform = 'linkedin' | 'x' | 'facebook' | 'whatsapp' | 'email';
+
+const shareOptions: Array<{ value: SharePlatform; label: string }> = [
+  { value: 'linkedin', label: 'LinkedIn' },
+  { value: 'x', label: 'X / Twitter' },
+  { value: 'facebook', label: 'Facebook' },
+  { value: 'whatsapp', label: 'WhatsApp' },
+  { value: 'email', label: 'E-mail' },
+];
+
 export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
+  const [selectedPlatform, setSelectedPlatform] = useState<SharePlatform>('linkedin');
+
+  const buildShareUrls = (): Record<SharePlatform, string> => {
+    const pageUrl = typeof window !== 'undefined' ? window.location.href : '';
+    const message = `${post.title} — ${post.excerpt || 'Consultez cet article sur CIPRESA.'}`;
+
+    return {
+      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`,
+      x: `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}&url=${encodeURIComponent(pageUrl)}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`,
+      whatsapp: `https://wa.me/?text=${encodeURIComponent(`${message} ${pageUrl}`)}`,
+      email: `mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(`${message}\n\n${pageUrl}`)}`,
+    };
+  };
+
+  const handleShare = (platform: SharePlatform = selectedPlatform) => {
+    const shareUrls = buildShareUrls();
+
+    if (platform === 'email') {
+      window.location.href = shareUrls.email;
+      toast.success('Préparation de l’e-mail de partage...', { duration: 2000, position: 'top-center' });
+      return;
+    }
+
+    const shareWindow = window.open(shareUrls[platform], '_blank', 'noopener,noreferrer');
+    if (shareWindow) {
+      toast.success('Partage lancé sur la plateforme sélectionnée.', { duration: 2000, position: 'top-center' });
+    } else {
+      window.location.href = shareUrls[platform];
+    }
+  };
+
   return (
     <PageTransition>
       <article>
@@ -65,6 +108,22 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
                 <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" /> {formatDate(post.publishedAt, 'long')}</span>
                 <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" /> {post.readTime}</span>
                 <span className="flex items-center gap-1.5"><User className="w-4 h-4" /> {post.author}</span>
+              </div>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {shareOptions.map((option) => (
+                  <button
+                    key={option.value}
+                    type="button"
+                    onClick={() => {
+                      setSelectedPlatform(option.value);
+                      handleShare(option.value);
+                    }}
+                    className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition hover:bg-white/20"
+                  >
+                    {option.label}
+                  </button>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -84,15 +143,26 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
                 </div>
               )}
 
-              <div className="flex items-center gap-3 mt-6">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => {
-                    navigator.clipboard.writeText(window.location.href);
-                    toast.success('Lien copié !', { duration: 2000, position: 'top-center' });
-                  }}
-                >
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <div className="flex items-center gap-2">
+                  <label htmlFor="share-platform" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    Plateforme
+                  </label>
+                  <select
+                    id="share-platform"
+                    value={selectedPlatform}
+                    onChange={(event) => setSelectedPlatform(event.target.value as SharePlatform)}
+                    className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm outline-none focus:border-cipresa-500"
+                  >
+                    {shareOptions.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <Button variant="outline" size="sm" onClick={() => handleShare()}>
                   <Share2 className="w-4 h-4" /> Partager
                 </Button>
               </div>

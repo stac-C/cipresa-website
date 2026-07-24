@@ -1,15 +1,11 @@
 import type { Metadata } from 'next';
+import { ProjectsPageClient } from '@/components/marketing/projects-page-client';
 
 export const metadata: Metadata = {
-  title: 'Projets',
-  description: 'Projets agricoles et accompagnement clé en main par CIPRESA.',
+  title: 'Projets | CIPRESA',
+  description: 'Découvrez nos projets agricoles, nos réalisations et notre accompagnement clé en main sur terrain.',
 };
 
 export default function ProjectsPage() {
-  return (
-    <main className="prose mx-auto py-12 px-5 sm:px-8">
-      <h1>Projets</h1>
-      <p>Page dédiée aux projets agricoles. Contenu à structurer.</p>
-    </main>
-  );
+  return <ProjectsPageClient />;
 }
