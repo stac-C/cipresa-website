@@ -22,7 +22,7 @@ export default async function LearningPathsPage() {
   return (
     <PageTransition>
       <div className="pt-20">
-        <div className="bg-gradient-to-b from-cipresa-950 to-gray-950 py-16">
+        <div className="bg-[#118708] py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Badge variant="success" className="mb-4">Parcours d&apos;apprentissage</Badge>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Suivez un parcours guidé</h1>

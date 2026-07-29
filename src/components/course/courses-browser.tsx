@@ -80,7 +80,7 @@ export function CoursesBrowser({ courses, categories, initialCategory }: Courses
   return (
     <PageTransition>
       <div className="pt-20">
-        <div className="bg-gradient-to-b from-cipresa-950 to-gray-950 py-16">
+        <div className="bg-[#118708] py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
               <Badge variant="success" className="mb-4">Formations</Badge>
@@ -201,7 +201,7 @@ export function CoursesBrowser({ courses, categories, initialCategory }: Courses
                       </div>
                       <h3 className="font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2 group-hover:text-cipresa-600 transition-colors text-sm">{course.title}</h3>
                       <div className="flex items-center gap-2 mb-2">
-                        <div className="w-5 h-5 rounded-full bg-gradient-to-br from-cipresa-400 to-cipresa-600 flex items-center justify-center text-[8px] text-white font-bold">
+                        <div className="w-5 h-5 rounded-full bg-cipresa-600 flex items-center justify-center text-[8px] text-white font-bold">
                           {course.instructor.fullName.charAt(0)}
                         </div>
                         <span className="text-xs text-gray-500">{course.instructor.fullName}</span>

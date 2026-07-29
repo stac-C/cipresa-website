@@ -31,7 +31,7 @@ export function BlogBrowser({ posts }: { posts: BlogPost[] }) {
   return (
     <PageTransition>
       <div className="pt-20">
-        <div className="bg-gradient-to-b from-cipresa-950 to-gray-950 py-20">
+        <div className="bg-[#118708] py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
               <Badge variant="success" className="mb-4">Ressources & conseils</Badge>
@@ -114,7 +114,7 @@ export function BlogBrowser({ posts }: { posts: BlogPost[] }) {
                         <div className="flex items-center justify-between gap-3 text-xs text-gray-400">
                           <div className="flex flex-wrap items-center gap-3">
                             <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5" /> {formatDate(post.publishedAt)}</span>
-                            <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {post.readTime}</span>
+                            <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />  {post.readTime}</span>
                           </div>
                           <span className="text-cipresa-500 transition-transform group-hover:translate-x-1"><ArrowRight className="w-4 h-4" /></span>
                         </div>
@@ -130,3 +130,4 @@ export function BlogBrowser({ posts }: { posts: BlogPost[] }) {
     </PageTransition>
   );
 }
+

@@ -15,3 +15,129 @@
 > [PWA] Service worker: F:\CIPRESA\cipresa-platform\public\sw.js
 > [PWA]   url: /sw.js
 > [PWA]   scope: /
+ ⚠ Compiled with warnings
+
+   Linting and checking validity of types ...
+./node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
+./node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
+./node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
+./node_modules/@opentelemetry/instrumentation/build/esm/index.js
+./node_modules/@sentry/opentelemetry/build/cjs/index.js
+./node_modules/@sentry/nextjs/build/cjs/server/index.js
+./node_modules/@sentry/nextjs/build/cjs/index.server.js
+./src/app/global-error.tsx
+
+./node_modules/require-in-the-middle/index.js
+Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
+
+Import trace for requested module:
+./node_modules/require-in-the-middle/index.js
+./node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
+./node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
+./node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
+./node_modules/@opentelemetry/instrumentation/build/esm/index.js
+./node_modules/@sentry/opentelemetry/build/cjs/index.js
+./node_modules/@sentry/nextjs/build/cjs/server/index.js
+./node_modules/@sentry/nextjs/build/cjs/index.server.js
+./src/app/global-error.tsx
+
+   Collecting page data ...
+   Generating static pages (0/68) ...
+   Generating static pages (17/68) 
+   Generating static pages (34/68) 
+   Generating static pages (51/68) 
+ ✓ Generating static pages (68/68)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    13.9 kB         167 kB
+├ ○ /_not-found                          158 B          87.7 kB
+├ ○ /about                               3.43 kB         148 kB
+├ ƒ /admin                               5.5 kB          215 kB
+├ ○ /admin/blog                          1.34 kB         210 kB
+├ ƒ /admin/blog/[id]                     1.93 kB         216 kB
+├ ○ /admin/blog/new                      1.93 kB         216 kB
+├ ○ /admin/courses                       1.34 kB         210 kB
+├ ƒ /admin/courses/[id]                  3.86 kB         218 kB
+├ ○ /admin/courses/new                   2.33 kB         217 kB
+├ ○ /admin/encyclopedia                  1.34 kB         210 kB
+├ ƒ /admin/encyclopedia/[id]             164 B           217 kB
+├ ƒ /admin/encyclopedia/new              164 B           217 kB
+├ ○ /admin/orders                        856 B           178 kB
+├ ○ /admin/products                      1.34 kB         210 kB
+├ ƒ /admin/products/[id]                 2.14 kB         216 kB
+├ ○ /admin/products/new                  2.14 kB         216 kB
+├ ƒ /admin/users                         836 B           178 kB
+├ ƒ /api/payments/nokash/status          0 B                0 B
+├ ƒ /api/payments/nokash/webhook         0 B                0 B
+├ ƒ /api/wishlist                        0 B                0 B
+├ ƒ /auth/callback                       0 B                0 B
+├ ○ /auth/forgot-password                4.17 kB         215 kB
+├ ○ /auth/login                          4.66 kB         221 kB
+├ ○ /auth/register                       5.55 kB         222 kB
+├ ○ /auth/reset-password                 3.97 kB         220 kB
+├ ƒ /blog                                4.63 kB         144 kB
+├ ƒ /blog/[slug]                         5.57 kB         151 kB
+├ ○ /careers                             7.65 kB         147 kB
+├ ○ /checkout                            8.53 kB         156 kB
+├ ○ /contact                             4.19 kB         135 kB
+├ ƒ /course/[slug]                       10.2 kB         158 kB
+├ ƒ /course/[slug]/learn                 8.11 kB         153 kB
+├ ○ /courses                             6.66 kB         146 kB
+├ ○ /courses/certifications              3.25 kB         143 kB
+├ ○ /courses/culture-annuelle            3.25 kB         143 kB
+├ ○ /courses/culture-maraichere          3.25 kB         143 kB
+├ ○ /courses/culture-perenne             3.25 kB         143 kB
+├ ○ /courses/formation-elevage           3.25 kB         143 kB
+├ ○ /courses/gestion-projet-agricoles    3.25 kB         143 kB
+├ ƒ /dashboard                           5.07 kB         145 kB
+├ ƒ /dashboard/analytics                 183 B          96.3 kB
+├ ƒ /dashboard/certificates              1.09 kB         141 kB
+├ ƒ /dashboard/my-courses                1.09 kB         141 kB
+├ ƒ /dashboard/orders                    158 B          87.7 kB
+├ ƒ /dashboard/settings                  4.46 kB         207 kB
+├ ƒ /dashboard/wishlist                  4.67 kB         152 kB
+├ ƒ /encyclopedia                        4.67 kB         144 kB
+├ ○ /events                              3.21 kB         139 kB
+├ ○ /faq                                 2.79 kB         138 kB
+├ ○ /instructors                         2.92 kB         147 kB
+├ ○ /marketplace                         5.62 kB         145 kB
+├ ○ /marketplace/equipements             150 B           143 kB
+├ ○ /marketplace/intrants-engrais        151 B           143 kB
+├ ○ /marketplace/irrigation              150 B           143 kB
+├ ○ /marketplace/kits-outils             151 B           143 kB
+├ ○ /marketplace/plants-fruitiers        150 B           143 kB
+├ ○ /marketplace/semences                150 B           143 kB
+├ ○ /offline                             1.98 kB         142 kB
+├ ○ /paths                               1.37 kB         141 kB
+├ ƒ /paths/[slug]                        4.69 kB         150 kB
+├ ƒ /plant/[slug]                        7.38 kB         152 kB
+├ ○ /privacy                             2.03 kB         147 kB
+├ ƒ /product/[slug]                      9.27 kB         157 kB
+├ ○ /projects                            5.05 kB         150 kB
+├ ○ /robots.txt                          0 B                0 B
+├ ○ /services                            5.42 kB         150 kB
+├ ○ /services/conseil-agricole           1.09 kB         141 kB
+├ ○ /services/etudes-de-faisabilite      3.16 kB         143 kB
+├ ○ /services/formation-sur-mesure       3.16 kB         143 kB
+├ ○ /services/maintenance                3.16 kB         143 kB
+├ ○ /services/projets-cle-en-main        3.16 kB         143 kB
+├ ○ /services/suivi-evaluation           3.16 kB         143 kB
+├ ƒ /sitemap.xml                         0 B                0 B
+└ ○ /terms                               2.03 kB         147 kB
++ First Load JS shared by all            87.5 kB
+  ├ chunks/2117-a602972d2830f0f4.js      31.8 kB
+  ├ chunks/fd9d1056-1a574867774bb214.js  53.6 kB
+  └ other shared chunks (total)          2.04 kB
+
+
+ƒ Middleware                             81.7 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

@@ -74,7 +74,7 @@ export function DashboardView({
           ))}
         </div>
       ) : (
-        <div className="rounded-2xl border border-cipresa-100 dark:border-cipresa-900 bg-gradient-to-br from-cipresa-50 to-white dark:from-cipresa-950/30 dark:to-gray-900 p-6 sm:p-8 mb-6">
+        <div className="rounded-2xl border border-cipresa-100 dark:border-cipresa-900 bg-[#f4fdf5] dark:from-[#118708]/40 dark:to-[#935001]/40 p-6 sm:p-8 mb-6">
           <div className="flex flex-col sm:flex-row sm:items-center gap-5">
             <div className="w-14 h-14 rounded-2xl bg-cipresa-500 flex items-center justify-center flex-shrink-0 shadow-button">
               <GraduationCap className="w-7 h-7 text-white" />

@@ -8,12 +8,12 @@ interface BadgeProps {
 }
 
 const variantStyles = {
-  default: 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200',
-  success: 'bg-cipresa-100 text-cipresa-800 dark:bg-cipresa-900/50 dark:text-cipresa-300',
-  warning: 'bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-300',
-  error: 'bg-red-100 text-red-800 dark:bg-red-900/50 dark:text-red-300',
-  info: 'bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300',
-  premium: 'bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800 dark:from-amber-900/50 dark:to-yellow-900/50 dark:text-amber-300',
+  default: 'border border-[#e2f5e3] bg-white text-[#935001] dark:border-[#27452b] dark:bg-[#172817] dark:text-[#f2f8ef]',
+  success: 'border border-[#bfe8bf] bg-[#f4fdf5] text-[#118708] dark:border-[#2d5d2f] dark:bg-[#16311a] dark:text-[#e8f8e7]',
+  warning: 'border border-[#f5e6b9] bg-[#fffdf7] text-[#935001] dark:border-[#5f451d] dark:bg-[#2b1f0f] dark:text-[#f8f0d5]',
+  error: 'border border-[#e5d6c4] bg-[#fcf8f5] text-[#935001] dark:border-[#5b3d2a] dark:bg-[#2a1b12] dark:text-[#f7e8d8]',
+  info: 'border border-[#d7ebd7] bg-[#fbfefb] text-[#118708] dark:border-[#27452b] dark:bg-[#172817] dark:text-[#e8f8e7]',
+  premium: 'border border-[#f7d67d] bg-[#fffdf7] text-[#935001] dark:border-[#6a4a16] dark:bg-[#2b220f] dark:text-[#f8f0d5]',
 };
 
 const sizes = {

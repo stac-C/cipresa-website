@@ -37,7 +37,7 @@ export function EncyclopediaBrowser({ plants, categories }: EncyclopediaBrowserP
   return (
     <PageTransition>
       <div className="pt-20">
-        <div className="bg-gradient-to-b from-gray-950 to-gray-900 py-16">
+        <div className="bg-[#118708] py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
               <Badge variant="premium" className="mb-4">Encyclopédie</Badge>
@@ -86,7 +86,7 @@ export function EncyclopediaBrowser({ plants, categories }: EncyclopediaBrowserP
               <StaggerItem key={plant.id}>
                 <Link href={`/plant/${plant.slug}`} className="group block">
                   <Card className="h-full">
-                    <div className="relative h-48 bg-gradient-to-br from-cipresa-100 to-blue-50 dark:from-cipresa-950 dark:to-gray-900 flex items-center justify-center overflow-hidden">
+                    <div className="relative h-48 bg-[#f4fdf5] dark:from-[#118708] dark:to-[#935001]/60 flex items-center justify-center overflow-hidden">
                       <div className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
                         style={{ backgroundImage: plant.images[0] ? `url(${plant.images[0]})` : 'none' }} />
                       {!plant.images[0] && <Trees className="w-24 h-24 text-cipresa-300 dark:text-cipresa-700" />}

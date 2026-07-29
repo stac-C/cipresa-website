@@ -56,7 +56,7 @@ export function MarketplaceBrowser({ products, categories }: MarketplaceBrowserP
   return (
     <PageTransition>
       <div className="pt-20">
-        <div className="bg-gradient-to-b from-gray-950 to-gray-900 py-16">
+        <div className="bg-[#118708] py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
               <Badge variant="warning" className="mb-4">Boutique</Badge>

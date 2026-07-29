@@ -17,10 +17,10 @@ const highlights = [
 
 export function MarketingPageShell({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.12),_transparent_35%),linear-gradient(135deg,_#f8fafc_0%,_#eefcf4_100%)] text-slate-900">
-      <section className="relative isolate overflow-hidden bg-cipresa-950 pt-24 pb-16 text-white sm:pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,_rgba(16,185,129,0.35),_transparent_28%),radial-gradient(circle_at_80%_0%,_rgba(59,130,246,0.22),_transparent_30%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/40 to-transparent" />
+    <div className="min-h-screen bg-[#f8fafc] text-slate-900">
+      <section className="relative isolate overflow-hidden bg-[#118708] pt-24 pb-16 text-white sm:pb-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,_rgba(250,168,0,0.2),_transparent_28%),radial-gradient(circle_at_80%_0%,_rgba(255,255,255,0.18),_transparent_30%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-slate-950/40" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
@@ -61,7 +61,7 @@ export function MarketingPageShell({ children }: { children: ReactNode }) {
       </main>
 
       <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="rounded-[32px] border border-emerald-100 bg-gradient-to-br from-cipresa-950 via-cipresa-900 to-slate-900 p-8 text-white shadow-[0_20px_80px_-30px_rgba(15,23,42,0.7)] sm:p-10 lg:p-12">
+        <div className="rounded-[32px] border border-emerald-100 bg-[#118708] p-8 text-white shadow-[0_20px_80px_-30px_rgba(17,135,8,0.35)] sm:p-10 lg:p-12">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-sm font-medium text-emerald-200">

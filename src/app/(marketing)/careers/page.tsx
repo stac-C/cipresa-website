@@ -97,7 +97,7 @@ export default function CareersPage() {
   return (
     <PageTransition>
       <div className="pt-20">
-        <div className="bg-gradient-to-b from-cipresa-950 to-gray-950 py-20">
+        <div className="bg-[#118708] py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="text-center">
               <Badge variant="success" className="mb-4">Carrières</Badge>
@@ -220,7 +220,7 @@ export default function CareersPage() {
             </div>
           </AnimatedSection>
 
-          <AnimatedSection className="mt-20 p-10 rounded-2xl bg-gradient-to-br from-cipresa-600 to-blue-800 text-white text-center" delay={0.2}>
+          <AnimatedSection className="mt-20 p-10 rounded-2xl bg-[#118708] text-white text-center" delay={0.2}>
             <TreePalm className="w-12 h-12 mx-auto mb-4 opacity-80" />
             <h2 className="text-3xl font-bold mb-3">Vous ne trouvez pas le poste idéal ?</h2>
             <p className="text-white/80 max-w-xl mx-auto mb-6">

@@ -18,7 +18,7 @@ export const Card: React.FC<CardProps> = ({ children, className, hover = true, g
   if (hover) {
     return (
       <AnimatedCard className={cn(
-        'rounded-xl overflow-hidden bg-white dark:bg-gray-800/80 border border-gray-100 dark:border-gray-700/50 shadow-sm transition-shadow duration-300 hover:shadow-md',
+        'rounded-xl overflow-hidden bg-white dark:bg-[#16271b] border border-[#e8f5e9] dark:border-[#27452b] shadow-[0_10px_30px_rgba(17,135,8,0.07)] transition-all duration-300 hover:shadow-[0_12px_34px_rgba(17,135,8,0.12)]',
         glass && 'glass-card',
         className
       )}>
@@ -29,7 +29,7 @@ export const Card: React.FC<CardProps> = ({ children, className, hover = true, g
 
   return (
     <Component className={cn(
-      'rounded-xl overflow-hidden bg-white dark:bg-gray-800/80 border border-gray-100 dark:border-gray-700/50 shadow-sm',
+      'rounded-xl overflow-hidden bg-white dark:bg-[#16271b] border border-[#e8f5e9] dark:border-[#27452b] shadow-[0_10px_30px_rgba(17,135,8,0.07)]',
       glass && 'glass-card',
       className
     )}>
@@ -51,14 +51,14 @@ export const CardImage: React.FC<{
   };
 
   return (
-    <div className={cn('relative overflow-hidden bg-gray-100 dark:bg-gray-800', aspectClasses[aspect], className)}>
+    <div className={cn('relative overflow-hidden bg-[#f4fdf5] dark:bg-[#16271b]', aspectClasses[aspect], className)}>
       <div
         className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
         style={{ backgroundImage: `url(${src})` }}
         role="img"
         aria-label={alt}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     </div>
   );
 };

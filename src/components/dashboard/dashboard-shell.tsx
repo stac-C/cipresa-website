@@ -43,7 +43,7 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
   const sidebarProfile = (onClose?: () => void) => (
     <>
       <div className="flex items-center gap-3 px-3 py-4 mb-4">
-        <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-cipresa-400 to-cipresa-600 flex items-center justify-center text-white font-bold shadow-sm flex-shrink-0">
+        <div className="w-11 h-11 rounded-xl bg-cipresa-600 flex items-center justify-center text-white font-bold shadow-sm flex-shrink-0">
           {getInitials(user?.fullName || 'Utilisateur')}
         </div>
         <div className="min-w-0">

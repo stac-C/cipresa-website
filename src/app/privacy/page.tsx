@@ -57,7 +57,7 @@ export default function PrivacyPage() {
   return (
     <PageTransition>
       <div className="pt-20">
-        <div className="relative overflow-hidden bg-cipresa-950 text-white">
+        <div className="relative overflow-hidden bg-[#118708] text-white">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,left,_var(--tw-gradient-stops))] from-cipresa-600/20 via-transparent to-transparent" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative">
             <AnimatedSection className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -111,7 +111,7 @@ export default function PrivacyPage() {
                             className="object-cover hover:scale-105 transition-transform duration-300"
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                          <div className="absolute inset-0 bg-black/40" />
                           <div className="absolute bottom-4 left-4 w-10 h-10 rounded-full bg-cipresa-500 flex items-center justify-center text-white shadow-lg">
                             <Icon className="w-5 h-5" />
                           </div>
@@ -242,7 +242,7 @@ export default function PrivacyPage() {
           </AnimatedSection>
 
           <AnimatedSection className="text-center">
-            <div className="rounded-2xl sm:rounded-[2rem] bg-gradient-to-br from-cipresa-900 to-gray-900 p-8 sm:p-12 lg:p-16 text-white">
+            <div className="rounded-2xl sm:rounded-[2rem] bg-[#118708] p-8 sm:p-12 lg:p-16 text-white">
               <h2 className="text-3xl sm:text-4xl lg:text-4xl font-bold mb-4">Besoin d\'aide ?</h2>
               <p className="mx-auto max-w-2xl text-white/70 text-base sm:text-lg leading-relaxed mb-8">
                 Contactez notre équipe pour toute question relative à vos données ou à la gestion de votre compte sur CIPRESA.

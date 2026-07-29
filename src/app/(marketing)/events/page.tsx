@@ -21,7 +21,7 @@ export default function EventsPage() {
   return (
     <PageTransition>
       <div className="pt-20">
-        <div className="bg-gradient-to-b from-cipresa-950 to-gray-950 py-20">
+        <div className="bg-[#118708] py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Badge variant="success" className="mb-4">Événements</Badge>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Événements & Webinaires</h1>
@@ -34,7 +34,7 @@ export default function EventsPage() {
             {events.map((event) => (
               <StaggerItem key={event.id}>
                 <Card className="h-full flex flex-col">
-                  <div className="relative h-48 bg-gradient-to-br from-cipresa-100 to-cipresa-50 dark:from-cipresa-950 dark:to-gray-900 flex items-center justify-center">
+                  <div className="relative h-48 bg-cipresa-100 dark:from-cipresa-950 dark:to-gray-900 flex items-center justify-center">
                     <Calendar className="w-16 h-16 text-cipresa-300 dark:text-cipresa-700" />
                     <Badge variant={eventTypeColors[event.type]} size="sm" className="absolute top-3 left-3">
                       {event.type === 'workshop' ? 'Atelier' : event.type === 'webinar' ? 'Webinaire' : event.type === 'conference' ? 'Conférence' : 'Formation'}

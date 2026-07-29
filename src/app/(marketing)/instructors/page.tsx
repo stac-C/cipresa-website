@@ -13,7 +13,7 @@ export default function InstructorsPage() {
   return (
     <PageTransition>
       <div className="pt-20">
-        <div className="bg-gradient-to-b from-cipresa-950 to-gray-950 py-20">
+        <div className="bg-[#118708] py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Badge variant="success" className="mb-4">Formateurs</Badge>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Nos formateurs</h1>
@@ -30,7 +30,7 @@ export default function InstructorsPage() {
                   <Card>
                     <CardContent className="p-6 sm:p-8">
                       <div className="flex flex-col sm:flex-row gap-6">
-                        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-cipresa-400 to-cipresa-600 flex items-center justify-center text-white text-3xl font-bold flex-shrink-0">
+                        <div className="w-24 h-24 rounded-full bg-cipresa-600 flex items-center justify-center text-white text-3xl font-bold flex-shrink-0">
                           {instructor.fullName.charAt(0)}
                         </div>
                         <div className="flex-1">

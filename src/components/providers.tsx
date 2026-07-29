@@ -31,7 +31,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
               fontSize: '14px',
             },
             success: {
-              iconTheme: { primary: '#1f63b5', secondary: '#fff' },
+              iconTheme: { primary: '#118708', secondary: '#fff' },
             },
             error: {
               iconTheme: { primary: '#ef4444', secondary: '#fff' },

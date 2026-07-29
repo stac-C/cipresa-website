@@ -167,10 +167,10 @@ export const Navbar = () => {
                     <button className={cn(
                       'flex items-center gap-1 rounded-full px-2.5 py-2 text-[11px] font-semibold tracking-[0.01em] transition-all hover:bg-cipresa-50',
                       activeMegaMenu === link.label || isActive(link.href)
-                        ? 'text-[#1f63b5]'
+                        ? 'text-[#118708]'
                         : cn(
-                            'text-[#1f2937]',
-                            'hover:text-[#1f63b5]'
+                            'text-[#2d2a24]',
+                            'hover:text-[#118708]'
                           )
                     )}>
                       {link.label}
@@ -210,7 +210,7 @@ export const Navbar = () => {
                                   className="w-full h-full absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
                                   style={{ backgroundImage: `url(${link.featured.image})` }}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                                <div className="absolute inset-0 bg-black/70" />
                                 <div className="relative p-3 h-full flex flex-col justify-end min-h-[160px]">
                                   <p className="text-[10px] text-cipresa-300 font-medium mb-0.5">À la une</p>
                                   <h4 className="text-white font-semibold text-sm mb-0.5">{link.featured.title}</h4>
@@ -234,10 +234,10 @@ export const Navbar = () => {
                     className={cn(
                       'relative rounded-full px-2.5 py-2 text-[11px] font-semibold tracking-[0.01em] transition-all hover:bg-cipresa-50',
                       isActive(link.href)
-                        ? 'bg-cipresa-50 text-[#1f63b5] after:absolute after:bottom-1 after:left-3 after:right-3 after:h-[2px] after:rounded-full after:bg-[#1f63b5]'
+                        ? 'bg-cipresa-50 text-[#118708] after:absolute after:bottom-1 after:left-3 after:right-3 after:h-[2px] after:rounded-full after:bg-[#118708]'
                         : cn(
-                            'text-[#1f2937]',
-                            'hover:text-[#1f63b5]'
+                            'text-[#2d2a24]',
+                            'hover:text-[#118708]'
                           )
                     )}
                   >
@@ -290,7 +290,7 @@ export const Navbar = () => {
                     <Button variant="ghost" size="sm" className="min-h-0 rounded-full bg-gray-50 px-3 py-2 text-[10px] font-semibold">Se connecter</Button>
                   </Link>
                   <Link href="/auth/register">
-                    <Button size="sm" className="min-h-0 rounded-full bg-[#1f63b5] px-4 py-2 text-[10px] font-semibold text-white shadow-none hover:bg-[#17375f]">Commencer</Button>
+                    <Button size="sm" className="min-h-0 rounded-full bg-[#118708] px-4 py-2 text-[10px] font-semibold text-white shadow-none hover:bg-[#935001]">Commencer</Button>
                   </Link>
                 </div>
               )}

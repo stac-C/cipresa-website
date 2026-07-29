@@ -72,7 +72,7 @@ export function PlantDetailView({ plant, relatedCourses, initialIsWishlisted }: 
                 role="img"
                 aria-label={plant.commonName}
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-black/30" />
                 <Badge variant="success" size="md" className="absolute top-4 left-4">{plant.category.name}</Badge>
                 {plant.exportPotential && <Badge variant="info" size="md" className="absolute top-4 right-4">Potentiel export</Badge>}
               </div>

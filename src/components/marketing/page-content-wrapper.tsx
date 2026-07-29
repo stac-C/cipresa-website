@@ -22,7 +22,7 @@ export function PageContentWrapper({
         {children}
       </section>
 
-      <section className="rounded-[32px] border border-emerald-100 bg-gradient-to-br from-cipresa-950 via-cipresa-900 to-slate-900 p-8 text-white shadow-[0_20px_80px_-30px_rgba(15,23,42,0.7)] sm:p-10 lg:p-12">
+      <section className="rounded-[32px] border border-emerald-100 bg-[#118708] p-8 text-white shadow-[0_20px_80px_-30px_rgba(17,135,8,0.35)] sm:p-10 lg:p-12">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-200">Uniformité visuelle</p>

@@ -147,7 +147,7 @@ export function CourseDetailView({
   return (
     <PageTransition>
       <div className="pt-16">
-        <div className="bg-gradient-to-b from-gray-950 to-gray-900">
+        <div className="bg-[#118708]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="py-4">
               <Link href="/courses" className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors">
@@ -183,7 +183,7 @@ export function CourseDetailView({
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cipresa-400 to-cipresa-600 flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 rounded-full bg-cipresa-600 flex items-center justify-center text-white font-bold">
                     {course.instructor.fullName.charAt(0)}
                   </div>
                   <div>
@@ -404,7 +404,7 @@ export function CourseDetailView({
           {activeTab === 'instructor' && (
             <div className="max-w-3xl">
               <div className="flex items-start gap-6 mb-8">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-cipresa-400 to-cipresa-600 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
+                <div className="w-20 h-20 rounded-full bg-cipresa-600 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
                   {course.instructor.fullName.charAt(0)}
                 </div>
                 <div>

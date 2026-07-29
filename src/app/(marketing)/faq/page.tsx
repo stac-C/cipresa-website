@@ -22,7 +22,7 @@ export default function FAQPage() {
   return (
     <PageTransition>
       <div className="pt-20">
-        <div className="bg-gradient-to-b from-cipresa-950 to-gray-950 py-20">
+        <div className="bg-[#118708] py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="text-center">
               <Badge variant="success" className="mb-4">FAQ</Badge>

@@ -1,11 +1,11 @@
 import { formatCurrency } from '@/lib/utils/format';
 
 const WRAPPER_STYLE = 'font-family: -apple-system, Segoe UI, Roboto, sans-serif; max-width: 560px; margin: 0 auto; color: #1f2937;';
-const BUTTON_STYLE = 'display: inline-block; background: #1f63b5; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;';
+const BUTTON_STYLE = 'display: inline-block; background: #118708; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;';
 
 function wrapper(bodyHtml: string): string {
   return `<div style="${WRAPPER_STYLE}">
-    <h1 style="color: #0c1c33; font-size: 20px;">CIPRESA</h1>
+    <h1 style="color: #118708; font-size: 20px;">CIPRESA</h1>
     ${bodyHtml}
     <p style="color: #9ca3af; font-size: 12px; margin-top: 32px;">CIPRESA Consulting — Agriculture au Cameroun et en Afrique</p>
   </div>`;

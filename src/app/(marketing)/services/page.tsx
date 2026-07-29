@@ -19,7 +19,7 @@ const pillars = [
     title: 'Formation & Conseil',
     description: 'Plus de 360h de formations en ligne avec des experts. Conseil et accompagnement personnalisé pour vos projets agricoles.',
     details: ['Cours en ligne', 'Accompagnement terrain', 'Certification', 'Mentorat individuel'],
-    color: 'from-cipresa-500 to-blue-700',
+    color: 'from-[#118708] to-[#935001]',
     href: '/courses',
   },
   {
@@ -27,7 +27,7 @@ const pillars = [
     title: 'Semences & Intrants',
     description: 'Semences certifiées, plants de qualité et intrants agricoles adaptés au climat africain pour des rendements optimaux.',
     details: ['Semences hybrides', 'Plants fruitiers', 'Engrais bio', 'Produits phytosanitaires'],
-    color: 'from-amber-500 to-orange-600',
+    color: 'from-[#FAA800] to-[#935001]',
     href: '/marketplace',
   },
   {
@@ -35,7 +35,7 @@ const pillars = [
     title: 'Équipement & Services',
     description: 'Outils agricoles, systèmes d\'irrigation et services de maintenance pour moderniser votre exploitation.',
     details: ['Outillage professionnel', 'Irrigation goutte-à-goutte', 'Maintenance', 'Installation'],
-    color: 'from-blue-500 to-indigo-600',
+    color: 'from-[#118708] to-[#FAA800]',
     href: '/marketplace',
   },
   {
@@ -43,7 +43,7 @@ const pillars = [
     title: 'Projets & Expertise',
     description: 'De la conception à la réalisation de projets agricoles clé en main en Afrique, avec un suivi expert.',
     details: ['Études de faisabilité', 'Projets clé en main', 'Suivi-évaluation', 'Consulting'],
-    color: 'from-purple-500 to-violet-600',
+    color: 'from-[#935001] to-[#118708]',
     href: '/about',
   },
 ];
@@ -66,7 +66,7 @@ export default function ServicesPage() {
   return (
     <PageTransition>
       <div className="pt-20">
-        <div className="bg-gradient-to-b from-cipresa-950 to-gray-950 py-20 relative overflow-hidden">
+        <div className="bg-[#118708] py-20 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid opacity-[0.04]" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <AnimatedSection className="text-center">
@@ -90,8 +90,8 @@ export default function ServicesPage() {
                     whileHover={{ y: -6 }}
                     className="group p-6 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700/50 hover:border-transparent hover:shadow-lg transition-all duration-300 relative overflow-hidden h-full"
                   >
-                    <div className={`absolute inset-0 bg-gradient-to-br ${pillar.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${pillar.color} flex items-center justify-center mb-4 shadow-sm`}>
+                    <div className="absolute inset-0 bg-cipresa-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="w-12 h-12 rounded-xl bg-cipresa-600 flex items-center justify-center mb-4 shadow-sm">
                       <pillar.icon className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{pillar.title}</h3>
@@ -99,7 +99,7 @@ export default function ServicesPage() {
                     <div className="space-y-1.5">
                       {pillar.details.map((d) => (
                         <div key={d} className="flex items-center gap-2 text-xs text-gray-400">
-                          <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${pillar.color}`} />
+                          <div className="w-1.5 h-1.5 rounded-full bg-cipresa-600" />
                           {d}
                         </div>
                       ))}
@@ -130,7 +130,7 @@ export default function ServicesPage() {
                       <item.icon className="w-7 h-7 text-cipresa-500" />
                     </div>
                     {index < process.length - 1 && (
-                      <div className="hidden md:block absolute top-8 left-[calc(50%+2.5rem)] w-[calc(100%-5rem)] h-px bg-gradient-to-r from-cipresa-200 to-transparent dark:from-cipresa-800" />
+                      <div className="hidden md:block absolute top-8 left-[calc(50%+2.5rem)] w-[calc(100%-5rem)] h-px bg-cipresa-200 dark:from-cipresa-800" />
                     )}
                   </div>
                   <span className="text-xs font-bold text-cipresa-600 dark:text-cipresa-400 tracking-wider">{item.step}</span>
@@ -186,7 +186,7 @@ export default function ServicesPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <AnimatedSection className="text-center">
-            <div className="p-12 rounded-3xl bg-gradient-to-br from-cipresa-900 to-gray-900 relative overflow-hidden">
+            <div className="p-12 rounded-3xl bg-[#118708] relative overflow-hidden">
               <div className="absolute inset-0 bg-grid opacity-[0.05]" />
               <div className="relative">
                 <h2 className="text-3xl font-bold text-white mb-4">Prêt à transformer votre exploitation ?</h2>

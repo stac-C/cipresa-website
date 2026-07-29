@@ -87,7 +87,7 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen flex">
-      <div className="hidden lg:flex flex-1 bg-gradient-to-br from-cipresa-900 to-gray-950 items-center justify-center p-12 relative overflow-hidden">
+      <div className="hidden lg:flex flex-1 bg-[#118708] items-center justify-center p-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-[0.05]" />
         <div className="relative text-center max-w-md">
           <Leaf className="w-20 h-20 text-cipresa-400/40 mx-auto mb-6" />

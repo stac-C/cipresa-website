@@ -49,7 +49,7 @@ export function LearningPathView({ path, isAuthenticated, isOnPath, entitledCour
   return (
     <PageTransition>
       <div className="pt-16">
-        <div className="bg-gradient-to-b from-gray-950 to-gray-900 py-12">
+        <div className="bg-[#118708] py-12">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link href="/paths" className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors mb-6">
               <ChevronLeft className="w-4 h-4" /> Retour aux parcours

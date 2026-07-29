@@ -62,7 +62,7 @@ const outcomes = [
 function ConseilAgricol() {
   return (
     <div className="space-y-8">
-      <section className="rounded-[28px] border border-emerald-100 bg-gradient-to-br from-emerald-50 via-white to-cipresa-50 p-6 sm:p-8 lg:p-10">
+      <section className="rounded-[28px] border border-emerald-100 bg-cipresa-50 p-6 sm:p-8 lg:p-10">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-3xl">
             <Badge variant="success" className="mb-4">
@@ -121,7 +121,7 @@ function ConseilAgricol() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-900 to-slate-900 p-6 text-white sm:p-8">
+        <div className="rounded-2xl border border-emerald-100 bg-[#118708] p-6 text-white sm:p-8">
           <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">
             <HandHelping className="h-6 w-6" />
           </div>

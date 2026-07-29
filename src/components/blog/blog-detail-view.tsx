@@ -94,9 +94,9 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
   return (
     <PageTransition>
       <article className="bg-white dark:bg-slate-950">
-        <div className="relative h-[50vh] min-h-[320px] overflow-hidden bg-gradient-to-b from-gray-950 to-gray-900">
+        <div className="relative h-[50vh] min-h-[320px] overflow-hidden bg-[#118708]">
           <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: `url(${post.image})` }} />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent" />
+          <div className="absolute inset-0 bg-gray-950" />
           <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-end px-4 pb-12 pt-20 sm:px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl">
               <Link href="/blog" className="mb-4 inline-flex items-center gap-1.5 text-sm text-white/60 transition-colors hover:text-white">
@@ -213,7 +213,7 @@ export function BlogDetailView({ post, relatedPosts }: BlogDetailViewProps) {
                   </p>
                 </div>
 
-                <div className="rounded-2xl bg-gradient-to-br from-cipresa-600 to-blue-800 p-5 text-white shadow-sm sm:p-6">
+                <div className="rounded-2xl bg-[#118708] p-5 text-white shadow-sm sm:p-6">
                   <h3 className="mb-2 text-lg font-bold">Devenir membre CIPRESA</h3>
                   <p className="mb-4 text-sm text-white/80">Accédez à toutes nos formations, ressources et conseils d&apos;experts.</p>
                   <Link href="/auth/register">

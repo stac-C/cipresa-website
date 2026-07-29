@@ -82,7 +82,7 @@ export function ProductDetailView({ product, reviews, initialIsWishlisted }: Pro
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
           <div className="grid lg:grid-cols-2 gap-12">
             <AnimatedSection direction="left" className="space-y-4">
-              <div className="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center relative">
+              <div className="aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center relative">
                 <div
                   className="w-full h-full bg-cover bg-center"
                   style={{ backgroundImage: `url(${product.images[selectedImage] || product.images[0]})` }}

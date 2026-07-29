@@ -265,7 +265,7 @@ function SectionHead({
         <motion.div variants={fadeUp}>
           <Link
             href={href}
-            className="group inline-flex w-fit items-center gap-2 rounded-full border border-gray-200 bg-white px-3.5 py-2 text-xs font-black text-cipresa-700 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-cipresa-300 hover:shadow-md"
+            className="group inline-flex w-fit items-center gap-2 rounded-full border border-cipresa-200 bg-cipresa-600 px-3.5 py-2 text-xs font-black text-white shadow-button transition-all duration-300 hover:-translate-y-0.5 hover:bg-cipresa-700 hover:border-cipresa-700"
           >
             {link}
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -278,7 +278,7 @@ function SectionHead({
 
 function CoverImage({ src, alt, sizes, className }: { src: string; alt: string; sizes: string; className?: string }) {
   if (!src) {
-    return <div className={cn('bg-gradient-to-br from-cipresa-100 via-white to-africa-dawn/25', className)} />;
+    return <div className={cn('bg-cipresa-100', className)} />;
   }
   return <Image src={src} alt={alt} fill sizes={sizes} className={cn('object-cover', className)} />;
 }
@@ -399,7 +399,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
 
   return (
     <div className="home-reference bg-white text-gray-900">
-      <section className="relative isolate overflow-hidden bg-cipresa-950 pt-[58px]">
+      <section className="relative isolate overflow-hidden bg-slate-950 pt-[58px]">
         <Image
           src="/images/banner image.png"
           alt="Agriculture intelligente - CIPRESA Consulting"
@@ -417,7 +417,6 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.09, delayChildren: 0.12 } } }}
             className="relative max-w-[680px] font-[var(--font-poppins)]"
           >
-            <div className="pointer-events-none absolute -inset-4 rounded-[1.75rem] bg-gradient-to-br from-cipresa-950/32 via-cipresa-950/16 to-transparent backdrop-blur-[1px] sm:-inset-5" />
             <motion.h1
               variants={headlineContainer}
               aria-label="La plateforme qui transforme vos projets agricoles en resultats mesurables."
@@ -462,7 +461,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
                 <motion.div
                   key={label}
                   variants={itemReveal}
-                  className="rounded-xl border border-white/15 bg-cipresa-950/55 px-3 py-2.5 shadow-glass backdrop-blur-md transition-all hover:-translate-y-1 hover:border-africa-dawn/35 hover:bg-cipresa-900/65"
+                  className="rounded-xl bg-cipresa-950/55 px-3 py-2.5 transition-all hover:-translate-y-1 hover:bg-cipresa-900/65"
                 >
                   <Icon className="h-3.5 w-3.5 text-africa-dawn" />
                   <strong className="mt-1.5 block text-base font-extrabold leading-none text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)] sm:text-lg">
@@ -478,7 +477,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
         </div>
       </section>
 
-      <motion.section className="relative overflow-hidden bg-cipresa-950" initial={false} whileInView="visible" viewport={viewport} variants={sectionReveal}>
+      <motion.section className="relative overflow-hidden bg-slate-950" initial={false} whileInView="visible" viewport={viewport} variants={sectionReveal}>
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(246,177,61,0.16),transparent_36%),radial-gradient(circle_at_88%_85%,rgba(31,99,181,0.22),transparent_38%)]" />
         <div className="relative mx-auto max-w-[1200px] px-5 py-14 sm:px-8">
           <svg
@@ -551,7 +550,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
                 <motion.div variants={cardHoverSpring} initial="rest" whileHover="hover" className="h-full">
                   <Link
                     href={`/product/${spotlightProduct.slug}`}
-                    className="group flex h-full min-h-[210px] flex-col overflow-hidden rounded-xl border border-white/15 bg-white/5"
+                    className="group flex h-full min-h-[210px] flex-col overflow-hidden rounded-xl bg-white/5"
                   >
                     <div className="relative flex-1 overflow-hidden">
                       <CoverImage
@@ -590,7 +589,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
                   sizes="35vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-cipresa-950/85 via-cipresa-950/10 to-transparent" />
+                <div className="absolute inset-0 bg-cipresa-950/85" />
                 <motion.div
                   className="absolute -right-6 -top-6 h-14 w-14 rotate-45 bg-africa-dawn"
                   animate={{ rotate: [45, 55, 45] }}
@@ -689,7 +688,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
                   href={service.href}
                   className="group relative flex h-full min-h-[230px] flex-col overflow-hidden rounded-xl border border-gray-200 bg-white p-4 shadow-card transition-shadow duration-300 hover:border-cipresa-200 hover:shadow-card-hover"
                 >
-                  <div className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-cipresa-600 via-africa-dawn to-earth-500 transition-transform duration-500 ease-out group-hover:scale-x-100" />
+                  <div className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-cipresa-600 transition-transform duration-500 ease-out group-hover:scale-x-100" />
                   <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-cipresa-700 text-white shadow-button transition-all duration-500 ease-out group-hover:rotate-6 group-hover:scale-110">
                     <service.icon className="h-5 w-5" />
                   </span>
@@ -713,7 +712,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
         </div>
       </motion.section>
 
-      <motion.section className="relative overflow-hidden bg-slate-50" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
+      <motion.section className="relative overflow-hidden bg-cipresa-50" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
         <div className="absolute inset-0 bg-grid" />
         <div className="relative mx-auto max-w-[1200px] px-5 py-16 sm:px-8">
           <SectionHead
@@ -728,17 +727,17 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
               <motion.div key={category.id} variants={itemReveal}>
                 <Link
                   href={`/courses?category=${category.slug}`}
-                  className="group block overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+                  className="group block overflow-hidden rounded-2xl border border-cipresa-200 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
                 >
                   <div className="relative h-36 overflow-hidden">
                     <CoverImage src={category.image} alt={category.name} sizes="20vw" className="transition duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-cipresa-950/70 via-transparent to-transparent opacity-80" />
-                    <span className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1 text-xs font-black text-cipresa-900 backdrop-blur-sm">
+                    <div className="absolute inset-0 bg-gradient-to-t from-cipresa-950/80 via-cipresa-950/35 to-transparent" />
+                    <span className="absolute bottom-3 left-3 rounded-full bg-cipresa-100/95 px-3 py-1 text-xs font-black text-cipresa-900 backdrop-blur-sm">
                       {category.count} cours
                     </span>
                   </div>
                   <div className="flex items-center justify-between gap-3 p-4">
-                    <strong className="text-xs font-black leading-tight text-gray-950 sm:text-sm">{category.name}</strong>
+                    <strong className="text-xs font-black leading-tight text-cipresa-950 sm:text-sm">{category.name}</strong>
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cipresa-50 text-cipresa-700 transition-transform group-hover:translate-x-1">
                       <ArrowRight className="h-4 w-4" />
                     </span>
@@ -753,7 +752,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
         </div>
       </motion.section>
 
-      <motion.section className="relative bg-white" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
+      <motion.section className="relative bg-cipresa-50" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
         <div className="mx-auto max-w-[1200px] px-5 py-16 sm:px-8">
           <SectionHead
             eyebrow="Formations"
@@ -765,35 +764,35 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
           <motion.div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" variants={staggerReveal}>
             {courses.map((course, index) => (
               <motion.div key={course.id} variants={itemReveal}>
-                <Link href={`/course/${course.slug}`} className="group card-shine block h-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                <Link href={`/course/${course.slug}`} className="group card-shine block h-full overflow-hidden rounded-2xl border border-cipresa-200 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
                   <div className="relative h-44 overflow-hidden">
                     <CoverImage src={course.thumbnail} alt={course.title} sizes="25vw" className="transition duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <span className="absolute left-3 top-3 rounded-full bg-africa-savanna px-3 py-1 text-[11px] font-black text-white shadow-sm">
+                    <div className="absolute inset-0 bg-gradient-to-t from-cipresa-950/80 via-cipresa-950/50 to-transparent" />
+                    <span className="absolute left-3 top-3 rounded-full bg-cipresa-600 px-3 py-1 text-[11px] font-black text-white shadow-sm">
                       {courseBadges[index] ?? 'Populaire'}
                     </span>
                   </div>
                   <div className="p-4">
-                    <h3 className="min-h-[36px] text-xs font-black leading-tight text-gray-950 transition-colors group-hover:text-cipresa-700 sm:text-sm">{course.title}</h3>
-                    <div className="mt-3 flex items-center gap-2 text-[11px] font-semibold text-muted-foreground">
+                    <h3 className="min-h-[36px] text-xs font-black leading-tight text-cipresa-950 transition-colors group-hover:text-cipresa-700 sm:text-sm">{course.title}</h3>
+                    <div className="mt-3 flex items-center gap-2 text-[11px] font-semibold text-cipresa-700">
                       <ShieldCheck className="h-4 w-4 text-cipresa-600" />
                       {course.instructor.fullName}
                     </div>
                     <div className="mt-3 flex items-center justify-between gap-3">
                       <div className="flex items-center gap-0.5">
                         {Array.from({ length: 5 }).map((_, star) => (
-                          <Star key={star} className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                          <Star key={star} className="h-3.5 w-3.5 fill-cipresa-600 text-cipresa-600" />
                         ))}
-                        <span className="ml-1.5 text-[11px] text-muted-foreground">({course.totalReviews})</span>
+                        <span className="ml-1.5 text-[11px] text-cipresa-700">({course.totalReviews})</span>
                       </div>
-                      <span className="inline-flex items-center gap-1 text-[11px] font-bold text-gray-500">
+                      <span className="inline-flex items-center gap-1 text-[11px] font-bold text-cipresa-700">
                         <Timer className="h-3.5 w-3.5" />
                         {course.duration}
                       </span>
                     </div>
-                    <div className="mt-4 flex items-center justify-between rounded-xl bg-slate-50 px-3 py-2">
-                      <span className="text-xs font-bold text-gray-500">{course.totalLessons} lecons</span>
-                      <strong className="text-xs font-black text-africa-savanna sm:text-sm">
+                    <div className="mt-4 flex items-center justify-between rounded-xl bg-cipresa-100 px-3 py-2">
+                      <span className="text-xs font-bold text-cipresa-700">{course.totalLessons} lecons</span>
+                      <strong className="text-xs font-black text-cipresa-900 sm:text-sm">
                         {course.price === 0 ? 'Gratuit' : formatCurrency(course.salePrice ?? course.price, course.currency)}
                       </strong>
                     </div>
@@ -802,13 +801,13 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
               </motion.div>
             ))}
             {courses.length === 0 && (
-              <p className="col-span-full py-12 text-center text-sm text-muted-foreground">Formations bientot disponibles.</p>
+              <p className="col-span-full py-12 text-center text-sm text-cipresa-700">Formations bientot disponibles.</p>
             )}
           </motion.div>
         </div>
       </motion.section>
 
-      <motion.section className="relative overflow-hidden bg-cipresa-950 text-white" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
+      <motion.section className="relative overflow-hidden bg-slate-950 text-white" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(246,177,61,0.18),transparent_34%),radial-gradient(circle_at_80%_20%,rgba(91,159,245,0.16),transparent_30%)]" />
         <div className="relative mx-auto grid max-w-[1200px] gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[0.95fr_1.05fr]">
           <div>
@@ -865,7 +864,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
                 <motion.article key={product.id} variants={itemReveal} className="group card-shine flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
                   <Link href={`/product/${product.slug}`} className="relative block h-44 overflow-hidden">
                     <CoverImage src={product.images[0] ?? ''} alt={product.name} sizes="25vw" className="transition duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-black/50" />
                     <span className="absolute left-3 top-3 rounded-full bg-africa-savanna px-3 py-1 text-[11px] font-black text-white shadow-sm">
                       {productBadges[index] ?? 'Populaire'}
                     </span>

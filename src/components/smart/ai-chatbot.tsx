@@ -66,7 +66,7 @@ export const AIChatbot = () => {
       <button
         onClick={() => setIsOpen(true)}
         className={cn(
-          'fixed bottom-6 right-6 z-40 w-14 h-14 rounded-2xl bg-gradient-to-br from-cipresa-500 to-cipresa-600 text-white shadow-xl shadow-cipresa-500/30 flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-200',
+          'fixed bottom-6 right-6 z-40 w-14 h-14 rounded-2xl bg-cipresa-600 text-white shadow-xl shadow-cipresa-500/30 flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-200',
           isOpen && 'hidden'
         )}
       >
@@ -81,7 +81,7 @@ export const AIChatbot = () => {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             className="fixed bottom-6 right-6 z-50 w-[380px] max-w-[calc(100vw-2rem)] h-[600px] max-h-[calc(100vh-6rem)] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 flex flex-col overflow-hidden"
           >
-            <div className="flex items-center justify-between p-4 bg-gradient-to-r from-cipresa-600 to-cipresa-500 text-white">
+            <div className="flex items-center justify-between p-4 bg-cipresa-600 text-white">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center">
                   <Bot className="w-5 h-5" />

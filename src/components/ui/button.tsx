@@ -17,11 +17,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variants = {
-  primary: 'bg-cipresa-600 text-white hover:bg-cipresa-700 shadow-button hover:shadow-button-hover',
-  secondary: 'bg-white/10 text-white border border-white/20 hover:bg-white/20 backdrop-blur-sm',
-  outline: 'border border-cipresa-500 text-cipresa-600 dark:text-cipresa-400 hover:bg-cipresa-50 dark:hover:bg-cipresa-950',
-  ghost: 'text-cipresa-600 dark:text-cipresa-400 hover:bg-cipresa-50 dark:hover:bg-cipresa-950/50',
-  danger: 'bg-red-600 text-white hover:bg-red-700',
+  primary: 'bg-[#118708] text-white hover:bg-[#0f7606] shadow-[0_10px_30px_rgba(17,135,8,0.18)] hover:shadow-[0_12px_34px_rgba(17,135,8,0.24)]',
+  secondary: 'bg-[#0f7606] text-white border border-[#0f7606] hover:bg-[#0d6a05]',
+  outline: 'border border-[#118708] text-[#118708] bg-white hover:bg-[#ecf7ed] hover:border-[#0f7606]',
+  ghost: 'text-[#118708] bg-transparent hover:bg-[#ecf7ed] hover:text-[#0f7606]',
+  danger: 'bg-[#0f7606] text-white hover:bg-[#0d6a05]',
 };
 
 const sizes = {

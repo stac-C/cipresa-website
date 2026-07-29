@@ -45,7 +45,7 @@ export default function CourseCategoryPageTemplate({
         initial={isMounted ? { opacity: 0, y: 14 } : false}
         animate={isMounted ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: reduceMotion ? 0 : 0.45, ease: 'easeOut' }}
-        className="rounded-[28px] border border-emerald-100 bg-gradient-to-br from-emerald-50 via-white to-cipresa-50 p-6 sm:p-8 lg:p-10"
+        className="rounded-[28px] border border-emerald-100 bg-cipresa-50 p-6 sm:p-8 lg:p-10"
       >
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
@@ -64,7 +64,7 @@ export default function CourseCategoryPageTemplate({
             transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut' }}
             className="rounded-[24px] border border-dashed border-cipresa-200 bg-white/80 p-5 shadow-sm"
           >
-            <div className="flex h-52 items-center justify-center rounded-[20px] bg-gradient-to-br from-cipresa-50 to-emerald-50 text-center text-slate-600">
+            <div className="flex h-52 items-center justify-center rounded-[20px] bg-cipresa-50 text-center text-slate-600">
               <div className="space-y-2">
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-white text-cipresa-700 shadow-sm">
                   <ImageIcon className="h-6 w-6" />

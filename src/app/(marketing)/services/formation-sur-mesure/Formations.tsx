@@ -27,7 +27,7 @@ function Formations() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-900 to-slate-900 p-6 text-white">
+      <div className="rounded-2xl border border-emerald-100 bg-[#118708] p-6 text-white">
         <h2 className="text-2xl font-semibold">Formations pensées pour votre contexte</h2>
         <p className="mt-3 text-sm leading-7 text-slate-200">
           Nous concevons des parcours réalistes et immédiatement applicables, avec des contenus adaptés à votre niveau, votre secteur et vos objectifs de transformation.

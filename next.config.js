@@ -7,6 +7,12 @@ const withPWA = require("next-pwa")({
   skipWaiting: true,
 });
 
+const isSentryEnabled = Boolean(
+  process.env.SENTRY_ORG &&
+    process.env.SENTRY_PROJECT &&
+    process.env.SENTRY_AUTH_TOKEN
+);
+
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -48,16 +54,19 @@ const nextConfig = {
   },
 };
 
-// Wrapping is safe with no Sentry account configured yet: without
-// SENTRY_ORG/SENTRY_PROJECT/SENTRY_AUTH_TOKEN, source map upload is just
-// skipped rather than failing the build.
-module.exports = withSentryConfig(withPWA(nextConfig), {
-  org: process.env.SENTRY_ORG,
-  project: process.env.SENTRY_PROJECT,
-  authToken: process.env.SENTRY_AUTH_TOKEN,
-  silent: true,
-  widenClientFileUpload: true,
-  disableLogger: true,
-  automaticVercelMonitors: false,
-  sourcemaps: { deleteSourcemapsAfterUpload: true },
-});
+// Only enable Sentry's webpack plugin when a real Sentry project is configured.
+// This avoids prerender/build issues in local or unconfigured environments.
+const config = withPWA(nextConfig);
+
+module.exports = isSentryEnabled
+  ? withSentryConfig(config, {
+      org: process.env.SENTRY_ORG,
+      project: process.env.SENTRY_PROJECT,
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+      silent: true,
+      widenClientFileUpload: true,
+      disableLogger: true,
+      automaticVercelMonitors: false,
+      sourcemaps: { deleteSourcemapsAfterUpload: true },
+    })
+  : config;

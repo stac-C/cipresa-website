@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <PageTransition>
       <div className="pt-20">
-        <div className="bg-gradient-to-b from-cipresa-950 to-gray-950 py-20">
+        <div className="bg-[#118708] py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="text-center">
               <Badge variant="success" className="mb-4">À propos</Badge>
@@ -79,7 +79,7 @@ export default function AboutPage() {
               {teamMembers.map((member) => (
                 <StaggerItem key={member.id}>
                   <Card className="text-center p-8">
-                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-cipresa-400 to-cipresa-600 mx-auto mb-5 flex items-center justify-center text-white text-3xl font-bold">
+                    <div className="w-24 h-24 rounded-full bg-cipresa-600 mx-auto mb-5 flex items-center justify-center text-white text-3xl font-bold">
                       {member.name.charAt(0)}
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white">{member.name}</h3>
@@ -92,7 +92,7 @@ export default function AboutPage() {
           </AnimatedSection>
 
           <AnimatedSection className="text-center">
-            <div className="p-12 rounded-3xl bg-gradient-to-br from-cipresa-900 to-gray-900 relative overflow-hidden">
+            <div className="p-12 rounded-3xl bg-[#118708] relative overflow-hidden">
               <div className="absolute inset-0 bg-grid opacity-[0.05]" />
               <div className="relative">
                 <h2 className="text-3xl font-bold text-white mb-4">Prêt à collaborer avec nous ?</h2>
