@@ -156,8 +156,8 @@ export default function CheckoutPage() {
       <PageTransition>
         <div className="min-h-screen bg-gray-50 dark:bg-gray-950 pt-20">
           <div className="max-w-lg mx-auto px-4 py-20 text-center">
-            <div className="w-20 h-20 rounded-full bg-amber-50 dark:bg-amber-950/30 flex items-center justify-center mx-auto mb-6">
-              <AlertTriangle className="w-10 h-10 text-amber-500" />
+            <div className="w-20 h-20 rounded-full bg-cipresa-50 dark:bg-cipresa-950/30 flex items-center justify-center mx-auto mb-6">
+              <AlertTriangle className="w-10 h-10 text-cipresa-600" />
             </div>
             <h1 className="text-2xl font-bold mb-3">Confirmation en attente</h1>
             <p className="text-gray-500 mb-2">

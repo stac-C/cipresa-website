@@ -1,10 +1,10 @@
 'use client';
 
-import { Suspense, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import toast from 'react-hot-toast';
 import { Leaf, Mail, Lock, Eye, EyeOff, ArrowRight, Chrome } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -25,6 +25,24 @@ function LoginForm() {
   const [form, setForm] = useState({ email: '', password: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [activeImage, setActiveImage] = useState(0);
+
+  const backgroundImages = [
+    '/images/hero/agriculture-hero.jpg',
+    '/images/hero/market-hero.jpg',
+    '/images/hero/training-hero.jpg',
+  ];
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveImage((prev) => {
+        const nextIndex = Math.floor(Math.random() * backgroundImages.length);
+        return nextIndex === prev ? (prev + 1) % backgroundImages.length : nextIndex;
+      });
+    }, 300000);
+
+    return () => window.clearInterval(interval);
+  }, [backgroundImages.length]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,12 +71,12 @@ function LoginForm() {
   };
 
   return (
-    <div className="min-h-screen flex">
-      <div className="flex-1 flex items-center justify-center p-8">
+    <div className="min-h-screen flex bg-[#f4fbf4]">
+      <div className="flex-1 flex items-center justify-center p-4 sm:p-8 lg:p-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="w-full max-w-md"
+          className="w-full max-w-md rounded-[28px] border border-emerald-100/80 bg-white/95 p-6 shadow-[0_24px_80px_rgba(17,135,8,0.12)] backdrop-blur sm:p-8"
         >
           <Link href="/" className="flex items-center gap-2.5 mb-10">
             <Image
@@ -71,6 +89,10 @@ function LoginForm() {
             />
           </Link>
 
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-sm font-semibold text-[#118708]">
+            <Leaf className="h-4 w-4" />
+            Espace professionnel CIPRESA
+          </div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Content de vous revoir</h1>
           <p className="text-gray-500 mb-8">Connectez-vous pour accéder à votre espace</p>
 
@@ -121,12 +143,33 @@ function LoginForm() {
         </motion.div>
       </div>
 
-      <div className="hidden lg:flex flex-1 bg-[#118708] items-center justify-center p-12 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-[0.05]" />
-        <div className="relative text-center max-w-md">
-          <Leaf className="w-20 h-20 text-cipresa-400/40 mx-auto mb-6" />
+      <div className="hidden lg:flex flex-1 items-center justify-center p-12 relative overflow-hidden bg-[#0b3f0b]">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={backgroundImages[activeImage]}
+            initial={{ opacity: 0, scale: 1.04 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.04 }}
+            transition={{ duration: 1.2, ease: 'easeInOut' }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={backgroundImages[activeImage]}
+              alt="Arrière-plan agricole CIPRESA"
+              fill
+              priority={activeImage === 0}
+              className="object-cover"
+            />
+          </motion.div>
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(7, 35, 7, 0.12)_rgba(16, 135, 8, 0.2)76)_48%,rgba(147, 79, 1, 0.15)_100%)]" />
+        <div className="absolute inset-0 bg-grid opacity-[0.06]" />
+        <div className="relative z-10 text-center max-w-md rounded-[24px] border border-white/20 bg-white/10 p-8 shadow-[0_20px_60px_rgba(0,0,0,0.2)] backdrop-blur-md">
+          <Leaf className="w-20 h-20 text-emerald-100/80 mx-auto mb-6" />
           <h2 className="text-3xl font-bold text-white mb-4">Bienvenue sur CIPRESA</h2>
-          <p className="text-white/60">Accédez à des formations agricoles de qualité, achetez des semences certifiées et suivez votre progression.</p>
+          <p className="text-sm leading-relaxed text-emerald-50/90">
+            Accédez à des formations agricoles de qualité, achetez des semences certifiées et suivez votre progression dans un espace pensé pour l’agriculture moderne.
+          </p>
         </div>
       </div>
     </div>

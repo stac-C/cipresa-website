@@ -303,7 +303,7 @@ function SpinBadge({ image, label }: { image: string; label: string }) {
       <div className="absolute inset-[15px] overflow-hidden rounded-full border-2 border-white/25">
         <Image src={image} alt="" fill sizes="112px" className="object-cover" />
       </div>
-      <span className="absolute -bottom-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full bg-africa-dawn text-cipresa-950 shadow-lg ring-4 ring-cipresa-950">
+      <span className="absolute -bottom-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full bg-cipresa-400 text-cipresa-950 shadow-lg ring-4 ring-cipresa-950">
         <Sparkles className="h-4 w-4" />
       </span>
     </div>
@@ -398,8 +398,8 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
   };
 
   return (
-    <div className="home-reference bg-white text-gray-900">
-      <section className="relative isolate overflow-hidden bg-slate-950 pt-[58px]">
+    <div className="home-reference bg-[#f6fcf6] text-[#17311a]">
+      <section className="relative isolate overflow-hidden bg-[#0a2908] pt-[58px]">
         <Image
           src="/images/banner image.png"
           alt="Agriculture intelligente - CIPRESA Consulting"
@@ -409,6 +409,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
           className="z-0 object-cover object-center opacity-60"
         />
         <div className="leaflet-pattern absolute inset-0 z-[1] opacity-30" />
+        <div className="absolute inset-0 z-[0] bg-[linear-gradient(100deg,rgba(4, 24, 8, 0.23)_0%,rgba(16, 135, 8, 0.09)_48%,rgba(16, 135, 8, 0.17)_100%)]" />
 
         <div className="relative z-10 mx-auto grid min-h-[calc(100vh-58px)] max-w-[1200px] items-center gap-10 px-5 py-14 sm:px-8 lg:grid-cols-[1.05fr_0.95fr]">
           <motion.div
@@ -438,13 +439,13 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
             </motion.p>
             <motion.div variants={itemReveal} className="relative mt-5 flex flex-wrap gap-2.5">
               <Link href="/courses">
-                <Button size="sm" className="min-h-0 rounded-full px-4 py-2 text-sm font-semibold shadow-[0_12px_28px_rgba(31,99,181,0.32)] sm:px-5 sm:py-2.5">
+                <Button size="sm" className="min-h-0 rounded-full px-4 py-2 text-sm font-semibold sm:px-5 sm:py-2.5">
                   Commencer
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
               <Link href="/services">
-                <Button variant="secondary" size="sm" className="min-h-0 rounded-full px-4 py-2 text-sm font-semibold sm:px-5 sm:py-2.5">
+                <Button variant="secondary" size="sm" className="min-h-0 bg-[#FAA800] rounded-full px-4 py-2 text-sm font-semibold sm:px-5 sm:py-2.5" style={{"background":"orange"}}>
                   <PlayCircle className="h-4 w-4" />
                   Explorer les services
                 </Button>
@@ -461,9 +462,9 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
                 <motion.div
                   key={label}
                   variants={itemReveal}
-                  className="rounded-xl bg-cipresa-950/55 px-3 py-2.5 transition-all hover:-translate-y-1 hover:bg-cipresa-900/65"
+                  className="rounded-xl border border-emerald-100/20 bg-cipresa-950/55 px-3 py-2.5 transition-all hover:-translate-y-1 hover:bg-cipresa-900/65"
                 >
-                  <Icon className="h-3.5 w-3.5 text-africa-dawn" />
+                  <Icon className="h-3.5 w-3.5 text-cipresa-300" />
                   <strong className="mt-1.5 block text-base font-extrabold leading-none text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)] sm:text-lg">
                     <CountUp value={value} suffix={suffix} />
                   </strong>
@@ -477,8 +478,8 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
         </div>
       </section>
 
-      <motion.section className="relative overflow-hidden bg-slate-950" initial={false} whileInView="visible" viewport={viewport} variants={sectionReveal}>
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(246,177,61,0.16),transparent_36%),radial-gradient(circle_at_88%_85%,rgba(31,99,181,0.22),transparent_38%)]" />
+      <motion.section className="relative overflow-hidden bg-[#0b3009]" initial={false} whileInView="visible" viewport={viewport} variants={sectionReveal}>
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(120, 255, 129, 0.04),transparent_6%),radial-gradient(circle_at_88%_85%,rgba(255,255,255,0.12),transparent_38%)]" />
         <div className="relative mx-auto max-w-[1200px] px-5 py-14 sm:px-8">
           <svg
             viewBox="0 0 60 70"
@@ -521,14 +522,14 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
                 <br />
                 Votre projet
                 <br />
-                <span className="text-africa-dawn">Ici</span>
+                <span className="text-cipresa-300">Ici</span>
               </motion.h2>
               <motion.span
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ type: 'spring', stiffness: 80, damping: 18, delay: 0.25 }}
                 viewport={{ once: true }}
-                className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-5 py-2.5 text-xs font-black text-white backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white hover:text-cipresa-950"
+                className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-xs font-black text-white backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white hover:text-cipresa-950"
               >
                 <Link href="/courses" className="flex items-center gap-2">
                   Commencer
@@ -596,12 +597,12 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
                   transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
                 />
                 <span className="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-cipresa-950 px-3 py-1.5 text-xs font-black text-white shadow-lg">
-                  <Sparkles className="h-3.5 w-3.5 text-africa-dawn" />
+                  <Sparkles className="h-3.5 w-3.5 text-cipresa-300" />
                   {spotlightDiscount ? `-${spotlightDiscount}%` : 'Nouveau'}
                 </span>
                 <div className="absolute inset-x-0 bottom-0 p-4">
                   <p className="text-xs font-black leading-tight text-white sm:text-sm font-[family-name:var(--font-poppins)]">Accompagnement terrain</p>
-                  <Link href="/services" className="mt-1.5 inline-flex items-center gap-1.5 text-xs font-bold text-africa-dawn hover:underline font-[family-name:var(--font-poppins)]">
+                  <Link href="/services" className="mt-1.5 inline-flex items-center gap-1.5 text-xs font-bold text-cipresa-200 hover:underline font-[family-name:var(--font-poppins)]">
                     Decouvrir
                     <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
@@ -660,7 +661,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
       </motion.section>
 
       <motion.section
-        className="relative overflow-hidden bg-white"
+        className="relative overflow-hidden bg-[#f4fbf3]"
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
@@ -697,7 +698,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
                   <ul className="mt-3 space-y-1.5">
                     {service.details.map((detail) => (
                       <li key={detail} className="flex items-center gap-2 text-[11px] font-bold text-gray-600">
-                        <Check className="h-3.5 w-3.5 shrink-0 text-africa-savanna" />
+                        <Check className="h-3.5 w-3.5 shrink-0 text-cipresa-700" />
                         {detail}
                       </li>
                     ))}
@@ -712,7 +713,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
         </div>
       </motion.section>
 
-      <motion.section className="relative overflow-hidden bg-cipresa-50" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
+      <motion.section className="relative overflow-hidden bg-[#f1faf1]" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
         <div className="absolute inset-0 bg-grid" />
         <div className="relative mx-auto max-w-[1200px] px-5 py-16 sm:px-8">
           <SectionHead
@@ -752,7 +753,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
         </div>
       </motion.section>
 
-      <motion.section className="relative bg-cipresa-50" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
+      <motion.section className="relative bg-[#f1faf1]" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
         <div className="mx-auto max-w-[1200px] px-5 py-16 sm:px-8">
           <SectionHead
             eyebrow="Formations"
@@ -807,11 +808,11 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
         </div>
       </motion.section>
 
-      <motion.section className="relative overflow-hidden bg-slate-950 text-white" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(246,177,61,0.18),transparent_34%),radial-gradient(circle_at_80%_20%,rgba(91,159,245,0.16),transparent_30%)]" />
+      <motion.section className="relative overflow-hidden bg-[#0b3009] text-white" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(120, 255, 129, 0),transparent_4%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.12),transparent_30%)]" />
         <div className="relative mx-auto grid max-w-[1200px] gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[0.95fr_1.05fr]">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-africa-dawn">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-cipresa-300">
               <ClipboardCheck className="h-4 w-4" />
               Methode CIPRESA
             </span>
@@ -838,7 +839,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
                 )}
               >
                 <span className="text-4xl font-black leading-none text-white/10">{number}</span>
-                <ClipboardCheck className="absolute right-4 top-4 h-6 w-6 text-africa-dawn" />
+                <ClipboardCheck className="absolute right-4 top-4 h-6 w-6 text-cipresa-300" />
                 <h3 className="mt-3 font-display text-sm font-black text-white">{title}</h3>
                 <p className="mt-2 text-xs font-medium leading-relaxed text-white/70">{text}</p>
               </motion.div>
@@ -847,7 +848,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
         </div>
       </motion.section>
 
-      <motion.section className="relative bg-slate-50" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
+      <motion.section className="relative bg-[#f1faf1]" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
         <div className="absolute inset-0 bg-dot" />
         <div className="relative mx-auto max-w-[1200px] px-5 py-16 sm:px-8">
           <SectionHead
@@ -865,7 +866,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
                   <Link href={`/product/${product.slug}`} className="relative block h-44 overflow-hidden">
                     <CoverImage src={product.images[0] ?? ''} alt={product.name} sizes="25vw" className="transition duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-black/50" />
-                    <span className="absolute left-3 top-3 rounded-full bg-africa-savanna px-3 py-1 text-[11px] font-black text-white shadow-sm">
+                    <span className="absolute left-3 top-3 rounded-full bg-cipresa-700 px-3 py-1 text-[11px] font-black text-white shadow-sm">
                       {productBadges[index] ?? 'Populaire'}
                     </span>
                     <button
@@ -875,8 +876,8 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
                         handleToggleWishlist(product);
                       }}
                       className={cn(
-                        'absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/95 shadow-sm backdrop-blur-sm transition-all hover:scale-105 hover:text-africa-savanna',
-                        isWishlisted ? 'text-red-500' : 'text-gray-600'
+                        'absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/95 shadow-sm backdrop-blur-sm transition-all hover:scale-105 hover:text-cipresa-700',
+                        isWishlisted ? 'text-cipresa-700' : 'text-gray-600'
                       )}
                       aria-label={isWishlisted ? 'Retirer des favoris' : 'Ajouter aux favoris'}
                     >
@@ -889,11 +890,11 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
                     </Link>
                     <div className="mt-3 flex items-center gap-0.5">
                       {Array.from({ length: 5 }).map((_, star) => (
-                        <Star key={star} className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                        <Star key={star} className="h-3.5 w-3.5 fill-cipresa-500 text-cipresa-500" />
                       ))}
                       <span className="ml-1.5 text-[11px] text-muted-foreground">({product.totalReviews})</span>
                     </div>
-                    <strong className="mt-3 block text-sm font-black text-africa-savanna">
+                    <strong className="mt-3 block text-sm font-black text-cipresa-700">
                       {formatCurrency(product.salePrice ?? product.price, product.currency)}{' '}
                       <span className="text-xs font-bold text-gray-600">/ {product.unit}</span>
                     </strong>
@@ -917,7 +918,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
         </div>
       </motion.section>
 
-      <motion.section className="relative border-y border-gray-200 bg-white" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
+      <motion.section className="relative border-y border-emerald-100 bg-[#f8fff8]" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
         <div className="mx-auto max-w-[1200px] px-5 py-16 sm:px-8">
           <SectionHead
             eyebrow="Pourquoi CIPRESA"
@@ -926,7 +927,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
           />
           <motion.div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5" variants={staggerReveal}>
             {benefits.map((benefit) => (
-              <motion.div key={benefit.title} variants={itemReveal} className="rounded-xl border border-gray-200 bg-slate-50 p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-card">
+              <motion.div key={benefit.title} variants={itemReveal} className="rounded-xl border border-emerald-100 bg-[#f8fff8] p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-card">
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-cipresa-800 shadow-sm">
                   <benefit.icon className="h-6 w-6" />
                 </span>
@@ -938,7 +939,7 @@ export function HomeView({ courses, products, categories, initialWishlistedProdu
         </div>
       </motion.section>
 
-      <motion.section className="relative overflow-hidden bg-white" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
+      <motion.section className="relative overflow-hidden bg-[#f8fff8]" initial="hidden" whileInView="visible" viewport={viewport} variants={sectionReveal}>
         <div className="absolute inset-0 bg-grid" />
         <div className="relative mx-auto max-w-[1200px] px-5 py-16 sm:px-8">
           <SectionHead eyebrow="Temoignages" title="Des producteurs et entrepreneurs avancent avec CIPRESA." />

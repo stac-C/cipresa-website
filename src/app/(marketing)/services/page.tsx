@@ -19,7 +19,7 @@ const pillars = [
     title: 'Formation & Conseil',
     description: 'Plus de 360h de formations en ligne avec des experts. Conseil et accompagnement personnalisé pour vos projets agricoles.',
     details: ['Cours en ligne', 'Accompagnement terrain', 'Certification', 'Mentorat individuel'],
-    color: 'from-[#118708] to-[#935001]',
+    color: 'from-[#118708] to-[#2cab3f]',
     href: '/courses',
   },
   {
@@ -27,7 +27,7 @@ const pillars = [
     title: 'Semences & Intrants',
     description: 'Semences certifiées, plants de qualité et intrants agricoles adaptés au climat africain pour des rendements optimaux.',
     details: ['Semences hybrides', 'Plants fruitiers', 'Engrais bio', 'Produits phytosanitaires'],
-    color: 'from-[#FAA800] to-[#935001]',
+    color: 'from-[#2cab3f] to-[#0f7606]',
     href: '/marketplace',
   },
   {
@@ -35,7 +35,7 @@ const pillars = [
     title: 'Équipement & Services',
     description: 'Outils agricoles, systèmes d\'irrigation et services de maintenance pour moderniser votre exploitation.',
     details: ['Outillage professionnel', 'Irrigation goutte-à-goutte', 'Maintenance', 'Installation'],
-    color: 'from-[#118708] to-[#FAA800]',
+    color: 'from-[#118708] to-[#58c963]',
     href: '/marketplace',
   },
   {
@@ -43,7 +43,7 @@ const pillars = [
     title: 'Projets & Expertise',
     description: 'De la conception à la réalisation de projets agricoles clé en main en Afrique, avec un suivi expert.',
     details: ['Études de faisabilité', 'Projets clé en main', 'Suivi-évaluation', 'Consulting'],
-    color: 'from-[#935001] to-[#118708]',
+    color: 'from-[#0f7606] to-[#118708]',
     href: '/about',
   },
 ];

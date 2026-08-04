@@ -493,7 +493,7 @@ function ReviewsTab({
           <div className="flex gap-1">
             {[1, 2, 3, 4, 5].map((n) => (
               <button key={n} type="button" onClick={() => setRating(n)}>
-                <Star className={cn('w-6 h-6', n <= rating ? 'fill-amber-400 text-amber-400' : 'text-gray-300 dark:text-gray-600')} />
+                <Star className={cn('w-6 h-6', n <= rating ? 'fill-cipresa-500 text-cipresa-500' : 'text-gray-300 dark:text-gray-600')} />
               </button>
             ))}
           </div>

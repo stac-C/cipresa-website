@@ -290,7 +290,7 @@ export const Navbar = () => {
                     <Button variant="ghost" size="sm" className="min-h-0 rounded-full bg-gray-50 px-3 py-2 text-[10px] font-semibold">Se connecter</Button>
                   </Link>
                   <Link href="/auth/register">
-                    <Button size="sm" className="min-h-0 rounded-full bg-[#118708] px-4 py-2 text-[10px] font-semibold text-white shadow-none hover:bg-[#935001]">Commencer</Button>
+                    <Button size="sm" className="min-h-0 rounded-full bg-[#118708] px-4 py-2 text-[10px] font-semibold text-white shadow-none hover:bg-[#0f7606]">Commencer</Button>
                   </Link>
                 </div>
               )}

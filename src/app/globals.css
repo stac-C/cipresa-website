@@ -5,18 +5,18 @@
 @layer base {
   :root {
     --font-poppins: "Trebuchet MS", "Segoe UI", sans-serif;
-    --background: 0 0% 100%;
-    --foreground: 120 12% 12%;
+    --background: 135 40% 97%;
+    --foreground: 140 18% 13%;
     --card: 0 0% 100%;
-    --card-foreground: 120 12% 12%;
-    --primary: 124 74% 27%;
+    --card-foreground: 140 18% 13%;
+    --primary: 123 81% 27%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 25 56% 34%;
+    --secondary: 30 72% 29%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 124 25% 96%;
-    --muted-foreground: 25 35% 24%;
+    --muted: 125 30% 95%;
+    --muted-foreground: 140 14% 28%;
     --accent: 43 100% 49%;
-    --accent-foreground: 120 12% 12%;
+    --accent-foreground: 140 18% 13%;
     --border: 124 24% 88%;
     --input: 124 24% 88%;
     --ring: 124 74% 27%;
@@ -24,18 +24,18 @@
   }
 
   .dark {
-    --background: 120 20% 10%;
+    --background: 125 20% 10%;
     --foreground: 0 0% 98%;
-    --card: 120 20% 10%;
+    --card: 125 20% 10%;
     --card-foreground: 0 0% 98%;
     --primary: 124 74% 32%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 25 56% 34%;
+    --secondary: 124 34% 24%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 124 20% 16%;
-    --muted-foreground: 120 10% 82%;
-    --accent: 43 100% 49%;
-    --accent-foreground: 120 12% 12%;
+    --muted: 124 18% 16%;
+    --muted-foreground: 125 10% 82%;
+    --accent: 124 58% 35%;
+    --accent-foreground: 140 18% 13%;
     --border: 124 20% 20%;
     --input: 124 20% 20%;
     --ring: 124 74% 32%;
@@ -44,7 +44,7 @@
 
 @layer base {
   * { @apply border-[#e8f5e9] dark:border-[#214527]; }
-  body { @apply bg-white dark:bg-[#0f1a12] text-[#1f2d1f] dark:text-[#f7fbf6] antialiased overflow-x-hidden; }
+  body { @apply bg-[#f5fcf6] dark:bg-[#0f1a12] text-[#17311a] dark:text-[#f7fbf6] antialiased overflow-x-hidden; }
   html { scroll-behavior: smooth; }
 }
 
@@ -62,11 +62,30 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
   .glass-card {
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(17, 135, 8, 0.16);
+    box-shadow: 0 12px 36px rgba(17, 135, 8, 0.08);
+  }
+  .green-surface {
+    background: linear-gradient(135deg, rgba(244, 253, 245, 0.95) 0%, rgba(230, 248, 231, 0.95) 100%);
+  }
+  .green-panel {
+    background: rgba(255, 255, 255, 0.96);
     border: 1px solid rgba(17, 135, 8, 0.14);
-    box-shadow: 0 10px 30px rgba(17, 135, 8, 0.08);
+    box-shadow: 0 18px 45px rgba(17, 135, 8, 0.08);
+  }
+  .agri-surface {
+    background: linear-gradient(135deg, #f7fdf7 0%, #edf8ea 100%);
+  }
+  .agri-panel {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(17, 135, 8, 0.16);
+    box-shadow: 0 20px 50px rgba(17, 135, 8, 0.08);
+  }
+  .agri-hero {
+    background: linear-gradient(135deg, #052b03 0%, #0f7606 46%, #2cab3f 100%);
   }
   .gradient-text {
     color: #118708;
@@ -111,14 +130,14 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(ellipse at 30% 50%, rgba(17,135,8,0.12) 0%, transparent 50%),
-              radial-gradient(ellipse at 70% 50%, rgba(250,168,0,0.12) 0%, transparent 50%);
+  background: radial-gradient(ellipse at 30% 50%, rgba(17,135,8,0.16) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 50%, rgba(44,171,63,0.16) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }
 
 .hero-gradient {
-  background: #118708;
+  background: linear-gradient(135deg, #0a4706 0%, #118708 55%, #2cab3f 100%);
 }
 
 .card-shine {

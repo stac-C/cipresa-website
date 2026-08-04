@@ -82,7 +82,7 @@ export default function MarketplaceCategoryPageTemplate({
             >
               <div className="flex h-44 items-center justify-center rounded-[20px] bg-[#fff8ef] text-center text-slate-600">
                 <div className="space-y-2">
-                  <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-xl bg-white text-amber-600 shadow-sm">
+                  <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-xl bg-white text-cipresa-700 shadow-sm">
                     <ShoppingBag className="h-5 w-5" />
                   </div>
                   <p className="text-sm font-semibold text-slate-800">{secondaryImageTitle}</p>

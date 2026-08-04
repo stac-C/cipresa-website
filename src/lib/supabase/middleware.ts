@@ -10,6 +10,14 @@ const ADMIN_PREFIXES = ['/admin'];
  * session) and enforces route protection for /dashboard and /admin.
  */
 export async function updateSession(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+  const needsAuth = PROTECTED_PREFIXES.some((p) => pathname.startsWith(p));
+  const needsAdmin = ADMIN_PREFIXES.some((p) => pathname.startsWith(p));
+
+  if (!needsAuth && !needsAdmin) {
+    return NextResponse.next({ request });
+  }
+
   let response = NextResponse.next({ request });
 
   const supabase = createServerClient(
@@ -32,10 +40,6 @@ export async function updateSession(request: NextRequest) {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-
-  const { pathname } = request.nextUrl;
-  const needsAuth = PROTECTED_PREFIXES.some((p) => pathname.startsWith(p));
-  const needsAdmin = ADMIN_PREFIXES.some((p) => pathname.startsWith(p));
 
   if ((needsAuth || needsAdmin) && !user) {
     const redirectUrl = new URL('/auth/login', request.url);

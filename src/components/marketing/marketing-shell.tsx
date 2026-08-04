@@ -17,21 +17,25 @@ const highlights = [
 
 export function MarketingPageShell({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-900">
-      <section className="relative isolate overflow-hidden bg-[#118708] pt-24 pb-16 text-white sm:pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,_rgba(250,168,0,0.2),_transparent_28%),radial-gradient(circle_at_80%_0%,_rgba(255,255,255,0.18),_transparent_30%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-slate-950/40" />
+    <div className="min-h-screen bg-[#f5fcf6] text-[#16331a]">
+      <section className="relative isolate overflow-hidden bg-[#106b07] pt-24 pb-16 text-white sm:pb-24">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/banner image.png')" }}
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3, 18, 5, 0.01)_0%,rgba(16, 135, 8, 0)_48%,rgba(12,95,7,0.42)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-[#051a05]/40" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-sm font-medium text-emerald-200 backdrop-blur">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-sm font-medium text-emerald-100 backdrop-blur">
                 <Sparkles className="h-4 w-4" />
                 {hero.eyebrow}
               </div>
               <h1 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
                 {hero.title}
               </h1>
-              <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+              <p className="mt-4 max-w-2xl text-lg leading-8 text-emerald-50/90 sm:text-xl">
                 {hero.description}
               </p>
             </div>
@@ -41,7 +45,7 @@ export function MarketingPageShell({ children }: { children: ReactNode }) {
                 const Icon = item.icon;
                 return (
                   <div key={item.label} className="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur transition hover:shadow-xl">
-                    <div className="flex items-center gap-2 text-emerald-300">
+                    <div className="flex items-center gap-2 text-emerald-200">
                       <Icon className="h-4 w-4" />
                       <span className="text-sm font-medium">{item.label}</span>
                     </div>
@@ -55,23 +59,23 @@ export function MarketingPageShell({ children }: { children: ReactNode }) {
       </section>
 
       <main className="mx-auto -mt-8 max-w-7xl px-4 pb-10 sm:px-6 lg:px-8 lg:-mt-10">
-        <div className="rounded-[32px] border border-slate-200/70 bg-white/95 p-6 shadow-[0_25px_90px_-30px_rgba(15,23,42,0.45)] backdrop-blur sm:p-8 lg:p-10">
+        <div className="rounded-[32px] border border-emerald-100 bg-white/95 p-6 shadow-[0_25px_90px_-30px_rgba(17,135,8,0.2)] backdrop-blur sm:p-8 lg:p-10">
           {children}
         </div>
       </main>
 
       <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="rounded-[32px] border border-emerald-100 bg-[#118708] p-8 text-white shadow-[0_20px_80px_-30px_rgba(17,135,8,0.35)] sm:p-10 lg:p-12">
+        <div className="rounded-[32px] border border-emerald-100 bg-[#0d5f08] p-8 text-white shadow-[0_20px_80px_-30px_rgba(17,135,8,0.35)] sm:p-10 lg:p-12">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-sm font-medium text-emerald-200">
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-sm font-medium text-emerald-100">
                 <Cpu className="h-4 w-4" />
                 Design professionnel
               </div>
               <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                 Un style harmonisé pour chaque page marketing
               </h2>
-              <p className="mt-3 text-lg leading-8 text-slate-300">
+              <p className="mt-3 text-lg leading-8 text-emerald-50/90">
                 Les pages marketing présentent désormais un look plus soigné, une hiérarchie claire et un rendu plus engageant pour vos visiteurs.
               </p>
             </div>

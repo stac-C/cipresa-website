@@ -27,7 +27,7 @@ export default async function AnalyticsPage() {
 
   const stats = [
     { icon: BookOpen, label: 'Cours en cours', value: inProgressCount.toString(), bg: 'bg-blue-50 dark:bg-blue-950/50', color: 'text-blue-600 dark:text-blue-400' },
-    { icon: Award, label: 'Cours terminés', value: completedCount.toString(), bg: 'bg-amber-50 dark:bg-amber-950/50', color: 'text-amber-600 dark:text-amber-400' },
+    { icon: Award, label: 'Cours terminés', value: completedCount.toString(), bg: 'bg-cipresa-50 dark:bg-cipresa-950/50', color: 'text-cipresa-600 dark:text-cipresa-400' },
     { icon: Clock, label: 'Heures apprises', value: `${Math.round(totalHoursLearned)}h`, bg: 'bg-gray-100 dark:bg-gray-800', color: 'text-gray-600 dark:text-gray-400' },
     { icon: TrendingUp, label: 'Progression moyenne', value: `${averageProgress}%`, bg: 'bg-cipresa-50 dark:bg-cipresa-950/50', color: 'text-cipresa-600 dark:text-cipresa-400' },
   ];

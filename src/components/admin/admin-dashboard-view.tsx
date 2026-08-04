@@ -171,7 +171,7 @@ export function AdminDashboardView({ stats, recentOrders, courses }: AdminDashbo
                     <td className="py-3 px-5 text-gray-500 whitespace-nowrap">{course.totalStudents}</td>
                     <td className="py-3 px-5 whitespace-nowrap">
                       <div className="flex items-center gap-1">
-                        <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                        <Star className="w-3.5 h-3.5 fill-cipresa-500 text-cipresa-500" />
                         <span className="text-gray-700 dark:text-gray-300">{course.rating}</span>
                       </div>
                     </td>

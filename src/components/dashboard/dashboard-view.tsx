@@ -37,7 +37,7 @@ export function DashboardView({
 
   const quickActions = [
     { icon: BookOpen, label: 'Continuer un cours', href: hasEnrolledCourses ? `/course/${enrolledCourses[0].slug}` : '/courses', color: 'bg-blue-50 text-blue-600 dark:bg-blue-950/50 dark:text-blue-400' },
-    { icon: Award, label: 'Voir mes certificats', href: '/dashboard/certificates', color: 'bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400' },
+    { icon: Award, label: 'Voir mes certificats', href: '/dashboard/certificates', color: 'bg-cipresa-50 text-cipresa-600 dark:bg-cipresa-950/50 dark:text-cipresa-400' },
     { icon: User, label: 'Compléter mon profil', href: '/dashboard/settings', color: 'bg-purple-50 text-purple-600 dark:bg-purple-950/50 dark:text-purple-400' },
     { icon: ShoppingBag, label: 'Dernière commande', href: '/dashboard/orders', color: 'bg-cipresa-50 text-cipresa-600 dark:bg-cipresa-950/50 dark:text-cipresa-400' },
   ];
@@ -60,7 +60,7 @@ export function DashboardView({
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
           {[
             { icon: BookOpen, label: 'Cours en cours', value: enrolledCourses.length.toString(), bg: 'bg-blue-50 dark:bg-blue-950/50', iconColor: 'text-blue-600 dark:text-blue-400' },
-            { icon: Award, label: 'Cours terminés', value: completedCourses.toString(), bg: 'bg-amber-50 dark:bg-amber-950/50', iconColor: 'text-amber-600 dark:text-amber-400' },
+            { icon: Award, label: 'Cours terminés', value: completedCourses.toString(), bg: 'bg-cipresa-50 dark:bg-cipresa-950/50', iconColor: 'text-cipresa-600 dark:text-cipresa-400' },
             { icon: Clock, label: 'Heures apprises', value: `${totalHoursLearned}h`, bg: 'bg-gray-100 dark:bg-gray-800', iconColor: 'text-gray-600 dark:text-gray-400' },
             { icon: TrendingUp, label: 'Progression moyenne', value: `${Object.values(progressByCourse).length > 0 ? Math.round(Object.values(progressByCourse).reduce((a, b) => a + b, 0) / Object.values(progressByCourse).length) : 0}%`, bg: 'bg-cipresa-50 dark:bg-cipresa-950/50', iconColor: 'text-cipresa-600 dark:text-cipresa-400' },
           ].map((stat) => (
@@ -74,7 +74,7 @@ export function DashboardView({
           ))}
         </div>
       ) : (
-        <div className="rounded-2xl border border-cipresa-100 dark:border-cipresa-900 bg-[#f4fdf5] dark:from-[#118708]/40 dark:to-[#935001]/40 p-6 sm:p-8 mb-6">
+        <div className="rounded-2xl border border-cipresa-100 dark:border-cipresa-900 bg-[#f4fdf5] dark:from-[#118708]/40 dark:to-[#0f7606]/40 p-6 sm:p-8 mb-6">
           <div className="flex flex-col sm:flex-row sm:items-center gap-5">
             <div className="w-14 h-14 rounded-2xl bg-cipresa-500 flex items-center justify-center flex-shrink-0 shadow-button">
               <GraduationCap className="w-7 h-7 text-white" />
@@ -159,7 +159,7 @@ export function DashboardView({
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-gray-900 dark:text-white truncate">{course.title}</p>
                     <div className="flex items-center gap-2 mt-0.5">
-                      <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+                      <Star className="w-3 h-3 fill-cipresa-500 text-cipresa-500" />
                       <span className="text-xs text-gray-500">{course.rating} ({course.totalStudents})</span>
                     </div>
                   </div>

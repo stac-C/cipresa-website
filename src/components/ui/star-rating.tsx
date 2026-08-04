@@ -23,13 +23,13 @@ export const StarRating: React.FC<StarRatingProps> = ({
     <div className={cn('flex items-center gap-1', className)}>
       <div className="flex">
         {Array.from({ length: full }, (_, i) => (
-          <Star key={`full-${i}`} size={size} className="fill-amber-400 text-amber-400" />
+          <Star key={`full-${i}`} size={size} className="fill-cipresa-600 text-cipresa-600" />
         ))}
         {half && (
-          <StarHalf size={size} className="fill-amber-400 text-amber-400" />
+          <StarHalf size={size} className="fill-cipresa-600 text-cipresa-600" />
         )}
         {Array.from({ length: empty }, (_, i) => (
-          <Star key={`empty-${i}`} size={size} className="text-gray-300 dark:text-gray-600" />
+          <Star key={`empty-${i}`} size={size} className="text-emerald-200 dark:text-emerald-900/50" />
         ))}
       </div>
       {showValue && (

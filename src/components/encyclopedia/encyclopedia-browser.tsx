@@ -67,9 +67,9 @@ export function EncyclopediaBrowser({ plants, categories }: EncyclopediaBrowserP
 
           <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide">
             <span className="text-xs text-gray-400 font-medium whitespace-nowrap">Climat:</span>
-            <button onClick={() => setSelectedClimate(null)} className={cn('px-2.5 py-1 rounded-md text-xs font-medium whitespace-nowrap transition-all', !selectedClimate ? 'bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700')}>Tous</button>
+            <button onClick={() => setSelectedClimate(null)} className={cn('px-2.5 py-1 rounded-md text-xs font-medium whitespace-nowrap transition-all', !selectedClimate ? 'bg-cipresa-100 dark:bg-cipresa-900/50 text-cipresa-800 dark:text-cipresa-300' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700')}>Tous</button>
             {climates.map((c) => (
-              <button key={c} onClick={() => setSelectedClimate(selectedClimate === c ? null : c)} className={cn('px-2.5 py-1 rounded-md text-xs font-medium whitespace-nowrap transition-all', selectedClimate === c ? 'bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700')}>
+              <button key={c} onClick={() => setSelectedClimate(selectedClimate === c ? null : c)} className={cn('px-2.5 py-1 rounded-md text-xs font-medium whitespace-nowrap transition-all', selectedClimate === c ? 'bg-cipresa-100 dark:bg-cipresa-900/50 text-cipresa-800 dark:text-cipresa-300' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700')}>
                 {c}
               </button>
             ))}
@@ -86,7 +86,7 @@ export function EncyclopediaBrowser({ plants, categories }: EncyclopediaBrowserP
               <StaggerItem key={plant.id}>
                 <Link href={`/plant/${plant.slug}`} className="group block">
                   <Card className="h-full">
-                    <div className="relative h-48 bg-[#f4fdf5] dark:from-[#118708] dark:to-[#935001]/60 flex items-center justify-center overflow-hidden">
+                    <div className="relative h-48 bg-[#f4fdf5] dark:from-[#118708] dark:to-[#0f7606]/60 flex items-center justify-center overflow-hidden">
                       <div className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
                         style={{ backgroundImage: plant.images[0] ? `url(${plant.images[0]})` : 'none' }} />
                       {!plant.images[0] && <Trees className="w-24 h-24 text-cipresa-300 dark:text-cipresa-700" />}
@@ -101,7 +101,7 @@ export function EncyclopediaBrowser({ plants, categories }: EncyclopediaBrowserP
                       <p className="text-xs text-gray-500 line-clamp-2 mb-3">{plant.description}</p>
                       <div className="flex flex-wrap gap-1.5 mb-3">
                         {plant.climate.slice(0, 2).map((c) => (
-                          <span key={c} className="px-2 py-0.5 rounded-full bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-300 text-[10px] font-medium">{c}</span>
+                          <span key={c} className="px-2 py-0.5 rounded-full bg-cipresa-50 dark:bg-cipresa-950/30 text-cipresa-700 dark:text-cipresa-300 text-[10px] font-medium">{c}</span>
                         ))}
                       </div>
                       <div className="flex items-center gap-4 text-xs text-gray-500">
@@ -110,7 +110,7 @@ export function EncyclopediaBrowser({ plants, categories }: EncyclopediaBrowserP
                           {waterLabels[plant.waterRequirement]}
                         </span>
                         <span className="flex items-center gap-1" title="Soleil">
-                          {plant.sunlight === 'full' ? <Sun className="w-3.5 h-3.5 text-amber-400" /> : plant.sunlight === 'partial' ? <CloudSun className="w-3.5 h-3.5 text-amber-400" /> : <Moon className="w-3.5 h-3.5 text-gray-400" />}
+                          {plant.sunlight === 'full' ? <Sun className="w-3.5 h-3.5 text-cipresa-500" /> : plant.sunlight === 'partial' ? <CloudSun className="w-3.5 h-3.5 text-cipresa-500" /> : <Moon className="w-3.5 h-3.5 text-gray-400" />}
                           {sunLabels[plant.sunlight]}
                         </span>
                         <span className="flex items-center gap-1" title="Cycle">

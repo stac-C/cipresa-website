@@ -21,7 +21,7 @@ function getPasswordStrength(pw: string): { score: number; label: string; color:
   ];
   const score = checks.filter(c => c.pass).length;
   const labels = ['', 'Faible', 'Moyen', 'Bon', 'Fort'];
-  const colors = ['', 'bg-red-500', 'bg-orange-500', 'bg-yellow-500', 'bg-cipresa-500'];
+  const colors = ['', 'bg-red-500', 'bg-cipresa-400', 'bg-cipresa-500', 'bg-cipresa-600'];
   return { score, label: labels[score], color: colors[score], checks };
 }
 
@@ -155,7 +155,7 @@ export default function RegisterPage() {
                   <div className="flex-1 h-1.5 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
                     <div className={cn('h-full rounded-full transition-all duration-300', strength.color)} style={{ width: `${(strength.score / 4) * 100}%` }} />
                   </div>
-                  <span className={cn('text-xs font-medium', strength.score <= 1 ? 'text-red-500' : strength.score === 2 ? 'text-orange-500' : strength.score === 3 ? 'text-yellow-600' : 'text-cipresa-600')}>
+                  <span className={cn('text-xs font-medium', strength.score <= 1 ? 'text-red-500' : strength.score === 2 ? 'text-cipresa-600' : strength.score === 3 ? 'text-cipresa-700' : 'text-cipresa-800')}>
                     {strength.label}
                   </span>
                 </div>

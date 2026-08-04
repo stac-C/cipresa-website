@@ -61,7 +61,7 @@ export default function InstructorsPage() {
                                 <div className="flex-1 min-w-0">
                                   <p className="text-sm font-medium text-gray-900 dark:text-white truncate group-hover:text-cipresa-600 transition-colors">{course.title}</p>
                                   <div className="flex items-center gap-2 text-xs text-gray-500">
-                                    <Star className="w-3 h-3 fill-amber-400 text-amber-400" /> {course.rating}
+                                    <Star className="w-3 h-3 fill-cipresa-500 text-cipresa-500" /> {course.rating}
                                     <span>&middot;</span>
                                     <Users className="w-3 h-3" /> {course.totalStudents}
                                   </div>

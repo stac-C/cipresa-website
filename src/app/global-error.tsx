@@ -40,7 +40,7 @@ export default function GlobalError({
               <button
                 type="button"
                 onClick={reset}
-                className="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl bg-[#118708] px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-[#935001]"
+                className="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl bg-[#118708] px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-[#0f7606]"
               >
                 <RefreshCw className="h-5 w-5" />
                 Réessayer

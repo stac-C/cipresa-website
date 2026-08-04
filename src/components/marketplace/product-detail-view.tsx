@@ -74,7 +74,7 @@ export function ProductDetailView({ product, reviews, initialIsWishlisted }: Pro
     <PageTransition>
       <div className="pt-20 bg-white dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <Link href="/marketplace" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-amber-600 transition-colors">
+          <Link href="/marketplace" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-cipresa-700 transition-colors">
             <ChevronLeft className="w-4 h-4" /> Retour à la boutique
           </Link>
         </div>
@@ -96,7 +96,7 @@ export function ProductDetailView({ product, reviews, initialIsWishlisted }: Pro
                     <button
                       key={idx}
                       onClick={() => setSelectedImage(idx)}
-                      className={`w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${selectedImage === idx ? 'border-amber-500' : 'border-gray-200 dark:border-gray-700'}`}
+                      className={`w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${selectedImage === idx ? 'border-cipresa-600' : 'border-gray-200 dark:border-gray-700'}`}
                     >
                       <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${img})` }} />
                     </button>
@@ -117,11 +117,11 @@ export function ProductDetailView({ product, reviews, initialIsWishlisted }: Pro
               <div className="flex items-baseline gap-3">
                 {product.salePrice ? (
                   <div className="flex items-center gap-2">
-                    <span className="text-4xl font-bold text-amber-600">{formatCurrency(product.salePrice, product.currency)}</span>
+                    <span className="text-4xl font-bold text-cipresa-700">{formatCurrency(product.salePrice, product.currency)}</span>
                     <span className="text-xl text-gray-400 line-through">{formatCurrency(product.price, product.currency)}</span>
                   </div>
                 ) : (
-                  <span className="text-4xl font-bold text-amber-600">{formatCurrency(currentPrice, product.currency)}</span>
+                  <span className="text-4xl font-bold text-cipresa-700">{formatCurrency(currentPrice, product.currency)}</span>
                 )}
                 <span className="text-gray-400">/{product.unit}</span>
               </div>
@@ -142,8 +142,8 @@ export function ProductDetailView({ product, reviews, initialIsWishlisted }: Pro
                         className={cn(
                           'px-4 py-2.5 rounded-lg border text-sm font-medium transition-all',
                           selectedVariant === v.id
-                            ? 'border-amber-500 bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300'
-                            : 'border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-amber-300'
+                            ? 'border-cipresa-600 bg-cipresa-50 dark:bg-cipresa-950/50 text-cipresa-700 dark:text-cipresa-300'
+                            : 'border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-cipresa-300'
                         )}
                       >
                         {v.name} - {formatCurrency(v.price, product.currency)}
@@ -168,7 +168,7 @@ export function ProductDetailView({ product, reviews, initialIsWishlisted }: Pro
                     size="lg"
                     className={cn(
                       'w-full shadow-none transition-all duration-300',
-                      isAdding ? 'bg-cipresa-600 hover:bg-cipresa-700 text-white' : 'bg-amber-600 hover:bg-amber-700 text-white'
+                      isAdding ? 'bg-cipresa-600 hover:bg-cipresa-700 text-white' : 'bg-cipresa-600 hover:bg-cipresa-700 text-white'
                     )}
                     onClick={handleAddToCart}
                     disabled={isAdding || currentStock === 0}
@@ -214,21 +214,21 @@ export function ProductDetailView({ product, reviews, initialIsWishlisted }: Pro
 
               <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 p-4 space-y-3">
                 <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-300">
-                  <Truck className="w-5 h-5 text-amber-500" />
+                  <Truck className="w-5 h-5 text-cipresa-600" />
                   <div>
                     <p className="font-medium text-gray-900 dark:text-white">Livraison partout au Cameroun</p>
                     <p className="text-xs">Sous 24h à 72h selon votre localisation</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-300">
-                  <Phone className="w-5 h-5 text-amber-500" />
+                  <Phone className="w-5 h-5 text-cipresa-600" />
                   <div>
                     <p className="font-medium text-gray-900 dark:text-white">Paiement Mobile Money</p>
                     <p className="text-xs">MTN Mobile Money & Orange Money acceptés</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-300">
-                  <Shield className="w-5 h-5 text-amber-500" />
+                  <Shield className="w-5 h-5 text-cipresa-600" />
                   <div>
                     <p className="font-medium text-gray-900 dark:text-white">Produits certifiés</p>
                     <p className="text-xs">Garantie de qualité et satisfaction</p>
@@ -258,7 +258,7 @@ export function ProductDetailView({ product, reviews, initialIsWishlisted }: Pro
             <div className="space-y-4 mt-6">
               {reviews.map((review) => (
                 <div key={review.id} className="flex gap-3 pb-4 border-b border-gray-100 dark:border-gray-800 last:border-0">
-                  <div className="w-9 h-9 rounded-full bg-amber-100 dark:bg-amber-950/50 flex items-center justify-center text-amber-600 text-sm font-bold flex-shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-cipresa-100 dark:bg-cipresa-950/50 flex items-center justify-center text-cipresa-700 text-sm font-bold flex-shrink-0">
                     {review.userName.charAt(0)}
                   </div>
                   <div className="flex-1">
@@ -289,7 +289,7 @@ function ProductReviewForm({ productId, isAuthenticated }: { productId: string; 
   if (!isAuthenticated) {
     return (
       <p className="text-gray-500 text-sm bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
-        <Link href="/auth/login" className="text-amber-600 hover:underline font-medium">Connectez-vous</Link> pour laisser un avis.
+        <Link href="/auth/login" className="text-cipresa-700 hover:underline font-medium">Connectez-vous</Link> pour laisser un avis.
       </p>
     );
   }
@@ -316,7 +316,7 @@ function ProductReviewForm({ productId, isAuthenticated }: { productId: string; 
       <div className="flex gap-1">
         {[1, 2, 3, 4, 5].map((n) => (
           <button key={n} type="button" onClick={() => setRating(n)}>
-            <Star className={cn('w-6 h-6', n <= rating ? 'fill-amber-400 text-amber-400' : 'text-gray-300 dark:text-gray-600')} />
+            <Star className={cn('w-6 h-6', n <= rating ? 'fill-cipresa-500 text-cipresa-500' : 'text-gray-300 dark:text-gray-600')} />
           </button>
         ))}
       </div>
@@ -325,9 +325,9 @@ function ProductReviewForm({ productId, isAuthenticated }: { productId: string; 
         onChange={(e) => setComment(e.target.value)}
         placeholder="Partagez votre expérience avec ce produit..."
         rows={3}
-        className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
+        className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-cipresa-500"
       />
-      <Button type="submit" size="sm" loading={isSubmitting} className="bg-amber-600 hover:bg-amber-700">
+      <Button type="submit" size="sm" loading={isSubmitting} className="bg-cipresa-600 hover:bg-cipresa-700">
         {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Publier'}
       </Button>
     </form>

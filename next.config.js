@@ -35,6 +35,10 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion", "date-fns"],
     instrumentationHook: true,
+    staleTimes: {
+      dynamic: 0,
+      static: 180,
+    },
   },
   webpack: (config) => {
     // @supabase/supabase-js reads process.version for a UA string. It's

@@ -29,8 +29,8 @@ export default async function CertificatesPage() {
     <div className="grid sm:grid-cols-2 gap-4">
       {certificates.map((cert) => (
         <div key={cert.id} className="p-5 bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 flex items-start gap-4">
-          <div className="w-12 h-12 rounded-lg bg-amber-50 dark:bg-amber-950/50 flex items-center justify-center flex-shrink-0">
-            <Award className="w-6 h-6 text-amber-500" />
+          <div className="w-12 h-12 rounded-lg bg-cipresa-50 dark:bg-cipresa-950/50 flex items-center justify-center flex-shrink-0">
+            <Award className="w-6 h-6 text-cipresa-600" />
           </div>
           <div className="flex-1 min-w-0">
             <p className="font-semibold text-sm text-gray-900 dark:text-white line-clamp-2">{cert.courseTitle}</p>

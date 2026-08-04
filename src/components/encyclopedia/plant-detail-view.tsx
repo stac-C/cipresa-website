@@ -92,8 +92,8 @@ export function PlantDetailView({ plant, relatedCourses, initialIsWishlisted }: 
                   <p className="text-xs text-gray-500">Eau</p>
                   <p className="font-semibold text-sm">{waterLabels[plant.waterRequirement]}</p>
                 </div>
-                <div className="p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/30">
-                  <Sun className="w-5 h-5 text-amber-500 mb-2" />
+                <div className="p-4 rounded-2xl bg-cipresa-50 dark:bg-cipresa-950/30">
+                  <Sun className="w-5 h-5 text-cipresa-600 mb-2" />
                   <p className="text-xs text-gray-500">Soleil</p>
                   <p className="font-semibold text-sm">{sunLabels[plant.sunlight]}</p>
                 </div>

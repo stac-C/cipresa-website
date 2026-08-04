@@ -17,11 +17,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variants = {
-  primary: 'bg-[#118708] text-white hover:bg-[#0f7606] shadow-[0_10px_30px_rgba(17,135,8,0.18)] hover:shadow-[0_12px_34px_rgba(17,135,8,0.24)]',
-  secondary: 'bg-[#0f7606] text-white border border-[#0f7606] hover:bg-[#0d6a05]',
-  outline: 'border border-[#118708] text-[#118708] bg-white hover:bg-[#ecf7ed] hover:border-[#0f7606]',
-  ghost: 'text-[#118708] bg-transparent hover:bg-[#ecf7ed] hover:text-[#0f7606]',
-  danger: 'bg-[#0f7606] text-white hover:bg-[#0d6a05]',
+  primary: 'bg-[#118708] text-white border border-[#118708] hover:bg-[#0f7606] shadow-[0_10px_25px_rgba(17,135,8,0.16)] hover:shadow-[0_12px_30px_rgba(17,135,8,0.22)]',
+  secondary: 'bg-[#0f7606] text-white border border-[#0f7606] hover:bg-[#0b5d06] shadow-[0_10px_25px_rgba(17,135,8,0.16)] hover:shadow-[0_12px_30px_rgba(17,135,8,0.22)]',
+  outline: 'border border-[#118708] text-[#118708] bg-white hover:bg-[#f2fbf2] hover:border-[#0f7606] shadow-[0_6px_16px_rgba(17,135,8,0.08)]',
+  ghost: 'text-[#118708] bg-transparent hover:bg-[#eef9ee] hover:text-[#0f7606]',
+  danger: 'bg-[#118708] text-white border border-[#118708] hover:bg-[#0f7606]',
 };
 
 const sizes = {

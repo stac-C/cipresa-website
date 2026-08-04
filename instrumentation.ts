@@ -1,7 +1,8 @@
 export async function register() {
   const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN;
+  const isLocalDev = process.env.NODE_ENV !== 'production';
 
-  if (!dsn) {
+  if (!dsn || isLocalDev) {
     return;
   }
 

@@ -56,7 +56,7 @@ export function MarketplaceBrowser({ products, categories }: MarketplaceBrowserP
   return (
     <PageTransition>
       <div className="pt-20">
-        <div className="bg-[#118708] py-16">
+        <div className="bg-[linear-gradient(100deg,rgba(4,24,8,0.96)_100%,rgba(17,135,8,0.38)_0%)] radius-10 py-16" style={{"borderRadius":"2rem"}}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
               <Badge variant="warning" className="mb-4">Boutique</Badge>
@@ -65,11 +65,11 @@ export function MarketplaceBrowser({ products, categories }: MarketplaceBrowserP
                 Semences, plants, intrants et équipements pour une agriculture productive
               </p>
               <div className="max-w-2xl mx-auto relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-emerald-100" />
                 <input
                   type="text" placeholder="Rechercher un produit..."
                   value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 rounded-xl bg-white/10 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 backdrop-blur-sm"
+                  className="w-full pl-12 pr-4 py-4 rounded-xl bg-white/10 border border-white/10 text-white placeholder-emerald-100/80 focus:outline-none focus:ring-2 focus:ring-cipresa-300 backdrop-blur-sm"
                 />
               </div>
             </motion.div>
@@ -78,9 +78,9 @@ export function MarketplaceBrowser({ products, categories }: MarketplaceBrowserP
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-4 flex items-center gap-2 overflow-x-auto scrollbar-hide">
-            <button onClick={() => setSelectedCategory(null)} className={cn('px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all', !selectedCategory ? 'bg-amber-500 text-white' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200')}>Tous</button>
+            <button onClick={() => setSelectedCategory(null)} className={cn('px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all', !selectedCategory ? 'bg-cipresa-700 text-white' : 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100')}>Tous</button>
             {categories.map((cat) => (
-              <button key={cat.id} onClick={() => setSelectedCategory(selectedCategory === cat.slug ? null : cat.slug)} className={cn('px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all flex items-center gap-1.5', selectedCategory === cat.slug ? 'bg-amber-500 text-white' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200')}>
+              <button key={cat.id} onClick={() => setSelectedCategory(selectedCategory === cat.slug ? null : cat.slug)} className={cn('px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all flex items-center gap-1.5', selectedCategory === cat.slug ? 'bg-cipresa-700 text-white' : 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100')}>
                 {cat.icon} {cat.name}
               </button>
             ))}
@@ -90,7 +90,7 @@ export function MarketplaceBrowser({ products, categories }: MarketplaceBrowserP
             <div className="flex items-center gap-3">
               <p className="text-sm text-gray-500">{filtered.length} produits</p>
               <label className="flex items-center gap-1.5 text-sm text-gray-500 cursor-pointer">
-                <input type="checkbox" checked={showInStock} onChange={() => setShowInStock(!showInStock)} className="rounded border-gray-300 text-amber-500 focus:ring-amber-500" />
+                <input type="checkbox" checked={showInStock} onChange={() => setShowInStock(!showInStock)} className="rounded border-emerald-200 text-cipresa-600 focus:ring-cipresa-600" />
                 En stock
               </label>
             </div>
@@ -124,26 +124,26 @@ export function MarketplaceBrowser({ products, categories }: MarketplaceBrowserP
                       )}
                     </div>
                     <CardContent className="flex-1 flex flex-col">
-                      <p className="text-xs text-amber-600 dark:text-amber-400 font-medium mb-1">{product.category.name}</p>
-                      <h3 className="font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2 group-hover:text-amber-600 transition-colors text-sm">{product.name}</h3>
+                      <p className="text-xs text-cipresa-700 font-medium mb-1">{product.category.name}</p>
+                      <h3 className="font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2 group-hover:text-cipresa-700 transition-colors text-sm">{product.name}</h3>
                       <StarRating rating={product.rating} totalReviews={product.totalReviews} size={13} />
                       <div className="mt-auto pt-3 flex items-center justify-between">
                         <div>
                           {product.salePrice ? (
                             <div className="flex items-center gap-1.5">
-                              <span className="text-base font-bold text-amber-600">{formatCurrency(product.salePrice, product.currency)}</span>
+                              <span className="text-base font-bold text-cipresa-700">{formatCurrency(product.salePrice, product.currency)}</span>
                               <span className="text-xs text-gray-400 line-through">{formatCurrency(product.price, product.currency)}</span>
                             </div>
                           ) : (
-                            <span className="text-base font-bold text-amber-600">{formatCurrency(product.price, product.currency)}</span>
+                            <span className="text-base font-bold text-cipresa-700">{formatCurrency(product.price, product.currency)}</span>
                           )}
                           <span className="text-xs text-gray-400">/{product.unit}</span>
                           <p className={cn('text-[10px] mt-0.5', product.stock > 0 ? 'text-cipresa-600' : 'text-red-500')}>
                             {product.stock > 0 ? 'En stock' : 'Rupture'}
                           </p>
                         </div>
-                        <div className="w-9 h-9 rounded-lg bg-amber-50 dark:bg-amber-950/50 flex items-center justify-center group-hover:bg-amber-500 transition-colors">
-                          <ShoppingBag className="w-4 h-4 text-amber-500 group-hover:text-white transition-colors" />
+                        <div className="w-9 h-9 rounded-lg bg-emerald-50 flex items-center justify-center group-hover:bg-cipresa-700 transition-colors">
+                          <ShoppingBag className="w-4 h-4 text-cipresa-700 group-hover:text-white transition-colors" />
                         </div>
                       </div>
                     </CardContent>
