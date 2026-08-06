@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useQueryClient } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { Search, Leaf, Droplets, Sun, Clock, CloudSun, Moon, Trees } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -19,10 +21,23 @@ interface EncyclopediaBrowserProps {
 }
 
 export function EncyclopediaBrowser({ plants, categories }: EncyclopediaBrowserProps) {
+  const router = useRouter();
+  const queryClient = useQueryClient();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedClimate, setSelectedClimate] = useState<string | null>(null);
   const [selectedWater, setSelectedWater] = useState<string | null>(null);
+
+  const prefetchPlant = (slug: string) => {
+    router.prefetch(`/plant/${slug}`);
+    void queryClient.prefetchQuery({
+      queryKey: ['plant', slug],
+      queryFn: async () => {
+        const response = await fetch(`/api/prefetch/plant/${slug}`);
+        return response.json();
+      },
+    });
+  };
 
   const filtered = plants.filter((p) => {
     if (searchQuery && !p.commonName.toLowerCase().includes(searchQuery.toLowerCase()) && !p.scientificName.toLowerCase().includes(searchQuery.toLowerCase())) return false;
@@ -84,7 +99,12 @@ export function EncyclopediaBrowser({ plants, categories }: EncyclopediaBrowserP
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pb-16">
             {filtered.map((plant) => (
               <StaggerItem key={plant.id}>
-                <Link href={`/plant/${plant.slug}`} className="group block">
+                <Link
+                href={`/plant/${plant.slug}`}
+                onMouseEnter={() => prefetchPlant(plant.slug)}
+                onTouchStart={() => prefetchPlant(plant.slug)}
+                className="group block"
+              >
                   <Card className="h-full">
                     <div className="relative h-48 bg-[#f4fdf5] dark:from-[#118708] dark:to-[#0f7606]/60 flex items-center justify-center overflow-hidden">
                       <div className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500"

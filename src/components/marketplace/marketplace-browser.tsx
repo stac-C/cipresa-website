@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useQueryClient } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { Search, ShoppingBag } from 'lucide-react';
 import { Card, CardImage, CardContent } from '@/components/ui/card';
@@ -28,11 +30,24 @@ interface MarketplaceBrowserProps {
 }
 
 export function MarketplaceBrowser({ products, categories }: MarketplaceBrowserProps) {
+  const router = useRouter();
+  const queryClient = useQueryClient();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState('popular');
   const [showInStock, setShowInStock] = useState(false);
   const [page, setPage] = useState(1);
+
+  const prefetchProduct = (slug: string) => {
+    router.prefetch(`/product/${slug}`);
+    void queryClient.prefetchQuery({
+      queryKey: ['product', slug],
+      queryFn: async () => {
+        const response = await fetch(`/api/prefetch/product/${slug}`);
+        return response.json();
+      },
+    });
+  };
 
   const filtered = useMemo(() => {
     const result = products.filter((p) => {
@@ -113,7 +128,12 @@ export function MarketplaceBrowser({ products, categories }: MarketplaceBrowserP
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-16">
             {paginated.map((product) => (
               <StaggerItem key={product.id}>
-                <Link href={`/product/${product.slug}`} className="group block">
+                <Link
+              href={`/product/${product.slug}`}
+              onMouseEnter={() => prefetchProduct(product.slug)}
+              onTouchStart={() => prefetchProduct(product.slug)}
+              className="group block"
+            >
                   <Card className="h-full flex flex-col">
                     <div className="relative">
                       <CardImage src={product.images[0]} alt={product.name} aspect="square" />

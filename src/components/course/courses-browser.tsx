@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useQueryClient } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { Search, Clock, Star, Play, Grid3X3, List, ArrowRight, X, BookOpen } from 'lucide-react';
 import { Card, CardImage, CardContent } from '@/components/ui/card';
@@ -39,11 +40,23 @@ interface CoursesBrowserProps {
 
 export function CoursesBrowser({ courses, categories, initialCategory }: CoursesBrowserProps) {
   const router = useRouter();
+  const queryClient = useQueryClient();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(initialCategory);
   const [selectedLevel, setSelectedLevel] = useState('all');
   const [sortBy, setSortBy] = useState('popular');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+
+  const prefetchCourse = (slug: string) => {
+    router.prefetch(`/course/${slug}`);
+    void queryClient.prefetchQuery({
+      queryKey: ['course', slug],
+      queryFn: async () => {
+        const response = await fetch(`/api/prefetch/course/${slug}`);
+        return response.json();
+      },
+    });
+  };
 
   const selectCategory = (slug: string | null) => {
     setSelectedCategory(slug);
@@ -183,7 +196,12 @@ export function CoursesBrowser({ courses, categories, initialCategory }: Courses
           <StaggerContainer className={cn('gap-6', viewMode === 'grid' ? 'grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'space-y-4')}>
             {filtered.map((course) => (
               <StaggerItem key={course.id}>
-                <Link href={`/course/${course.slug}`} className="group block">
+                <Link
+              href={`/course/${course.slug}`}
+              onMouseEnter={() => prefetchCourse(course.slug)}
+              onTouchStart={() => prefetchCourse(course.slug)}
+              className="group block"
+            >
                   <Card className={cn('h-full', viewMode === 'list' && 'flex flex-row')}>
                     <div className={cn('relative overflow-hidden', viewMode === 'list' ? 'w-48 flex-shrink-0' : '')}>
                       <CardImage src={course.thumbnail} alt={course.title} aspect="video" />

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { cn } from '@/lib/utils/cn';
 import { Providers } from '@/components/providers';
 import { ShellContent } from '@/components/layout/shell-content';
+import { NavigationProgress } from '@/components/layout/navigation-progress';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -58,6 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={cn('font-sans min-h-screen bg-white dark:bg-gray-950')} suppressHydrationWarning>
         <Providers>
+          <NavigationProgress />
           <ShellContent>{children}</ShellContent>
         </Providers>
       </body>
