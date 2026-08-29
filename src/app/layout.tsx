@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   manifest: '/manifest.json',
-  icons: { icon: '/favicon.ico', apple: '/icons/icon-192x192.png' },
+  icons: { icon: '/images/con-72x72.png', apple: '/images/con-72x72.png' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

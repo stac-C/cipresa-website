@@ -133,7 +133,7 @@ export const Navbar = () => {
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-40 border-b border-gray-100 bg-white/95 font-[var(--font-poppins)] shadow-[0_1px_10px_rgba(15,23,42,0.05)] backdrop-blur transition-all duration-500',
+          'fixed top-0 left-0 right-0 z-40 border-b border-gray-100 bg-white/95 font-[var(--font-poppins)] shadow-[0_1px_10px_rgba(15,23,42,0.05)] backdrop-blur transition-transform duration-200 ease-out',
           isScrolledDown && !isVisible && '-translate-y-full',
           isVisible && 'translate-y-0'
         )}

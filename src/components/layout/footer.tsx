@@ -72,7 +72,13 @@ export const Footer = () => {
   return (
     <footer className="relative overflow-hidden bg-[#0b3f0b] text-white" aria-label="Pied de page du site CIPRESA Consulting">
       <div className="absolute inset-0">
-        <Image src="/images/hero/agriculture-hero.jpg" alt="Champ agricole" fill className="object-cover opacity-25" priority />
+        <Image
+          src="/images/hero/agriculture-hero.jpg"
+          alt="Champ agricole"
+          fill
+          sizes="100vw"
+          className="object-cover opacity-25"
+        />
         <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(7, 35, 7, 0.2)_0%,rgba(16, 135, 8, 0.16)_45%,rgba(16, 135, 8, 0.04)_100%)]" />
       </div>
 

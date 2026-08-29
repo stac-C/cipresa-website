@@ -5,6 +5,47 @@ const withPWA = require("next-pwa")({
   disable: process.env.NODE_ENV === "development",
   register: true,
   skipWaiting: true,
+  runtimeCaching: [
+    {
+      // Keep public HTML fast while never caching authenticated or transactional pages.
+      urlPattern: /^https?:\/\/[^/]+\/(?!api(?:\/|$)|auth(?:\/|$)|dashboard(?:\/|$)|admin(?:\/|$)|checkout(?:\/|$)|offline(?:\/|$)|course\/[^/]+\/learn(?:\/|$)).*/i,
+      handler: "NetworkFirst",
+      options: {
+        cacheName: "cipresa-public-pages",
+        networkTimeoutSeconds: 3,
+        expiration: {
+          maxEntries: 40,
+          maxAgeSeconds: 5 * 60,
+        },
+        cacheableResponse: { statuses: [0, 200] },
+      },
+    },
+    {
+      // Images are immutable from the app's perspective and benefit from CacheFirst.
+      urlPattern: /^https?:\/\/[^/]+\/_next\/image\?.*/i,
+      handler: "CacheFirst",
+      options: {
+        cacheName: "cipresa-optimized-images",
+        expiration: {
+          maxEntries: 120,
+          maxAgeSeconds: 30 * 24 * 60 * 60,
+        },
+        cacheableResponse: { statuses: [0, 200] },
+      },
+    },
+    {
+      urlPattern: /^https:\/\/(?:res\.cloudinary\.com|images\.unsplash\.com)\/.*/i,
+      handler: "CacheFirst",
+      options: {
+        cacheName: "cipresa-remote-images",
+        expiration: {
+          maxEntries: 120,
+          maxAgeSeconds: 30 * 24 * 60 * 60,
+        },
+        cacheableResponse: { statuses: [0, 200] },
+      },
+    },
+  ],
 });
 
 const isSentryEnabled = Boolean(
@@ -37,7 +78,7 @@ const nextConfig = {
     instrumentationHook: true,
     staleTimes: {
       dynamic: 0,
-      static: 180,
+      static: 300,
     },
   },
   webpack: (config) => {

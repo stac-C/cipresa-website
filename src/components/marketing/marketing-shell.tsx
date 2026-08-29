@@ -18,13 +18,13 @@ const highlights = [
 export function MarketingPageShell({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-[#f5fcf6] text-[#16331a]">
-      <section className="relative isolate overflow-hidden bg-[#106b07] pt-24 pb-16 text-white sm:pb-24">
+      <section className="relative isolate min-h-[420px] overflow-hidden bg-[#106b07] pt-24 pb-16 text-white sm:pb-24">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/banner image.png')" }}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3, 18, 5, 0.01)_0%,rgba(16, 135, 8, 0)_48%,rgba(12,95,7,0.42)_100%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-[#051a05]/40" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,18,5,0.78)_0%,rgba(16,135,8,0.28)_52%,rgba(12,95,7,0.52)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#051a05]/60 to-transparent" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
@@ -44,7 +44,7 @@ export function MarketingPageShell({ children }: { children: ReactNode }) {
               {highlights.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.label} className="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur transition hover:shadow-xl">
+                  <div key={item.label} className="rounded-2xl border border-white/15 bg-white/[0.12] p-4 shadow-[0_12px_32px_rgba(0,0,0,0.12)] backdrop-blur transition duration-200 hover:-translate-y-0.5 hover:bg-white/[0.16]">
                     <div className="flex items-center gap-2 text-emerald-200">
                       <Icon className="h-4 w-4" />
                       <span className="text-sm font-medium">{item.label}</span>
@@ -59,7 +59,7 @@ export function MarketingPageShell({ children }: { children: ReactNode }) {
       </section>
 
       <main className="mx-auto -mt-8 max-w-7xl px-4 pb-10 sm:px-6 lg:px-8 lg:-mt-10">
-        <div className="rounded-[32px] border border-emerald-100 bg-white/95 p-6 shadow-[0_25px_90px_-30px_rgba(17,135,8,0.2)] backdrop-blur sm:p-8 lg:p-10">
+        <div className="rounded-[32px] border border-emerald-100 bg-white/95 p-6 shadow-[0_25px_90px_-30px_rgba(17,135,8,0.2)] backdrop-blur-sm sm:p-8 lg:p-10">
           {children}
         </div>
       </main>
