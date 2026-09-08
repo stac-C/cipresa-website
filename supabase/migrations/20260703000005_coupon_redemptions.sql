@@ -13,6 +13,8 @@ create table coupon_redemptions (
   unique(user_id, coupon_id)
 );
 
+--df
+
 alter table coupon_redemptions enable row level security;
 create policy "Users can view own coupon redemptions" on coupon_redemptions for select using (auth.uid() = user_id);
 create policy "Admins can manage coupon redemptions" on coupon_redemptions for all using (is_admin());
