@@ -124,7 +124,7 @@
   .horizontal-scroll { scrollbar-width: thin; scrollbar-color: rgba(17, 135, 8, 0.45) transparent; }
   .horizontal-scroll::-webkit-scrollbar { height: 5px; }
   .horizontal-scroll::-webkit-scrollbar-track { background: transparent; }
-  .horizontal-scroll::-webkit-scrollbar-thumb { background: rgba(17, 135, 8, 0.45); border-radius: 999px; }
+  .horizontal-scroll::-webkit-scrollbar-thumb { background: #062503 ; border-radius: 999px; }
   .line-clamp-2 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
   .line-clamp-3 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
   .bg-grid {
@@ -176,7 +176,7 @@
   left: -75%;
   width: 50%;
   height: 100%;
-  background: rgba(255,255,255,0.12);
+  background: rgb(247, 247, 247);
   transform: skewX(-25deg);
   transition: left 0.6s ease;
 }
