@@ -124,9 +124,9 @@ export const Footer = () => {
                   <a href="https://www.youtube.com/@cipresaconsulting" target="_blank" rel="noreferrer" title="YouTube" aria-label="YouTube de CIPRESA" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white/85 hover:bg-white/20">
                     <Youtube className="h-4 w-4" />
                   </a>
-                  <a href="https://www.linkedin.com/company/cipresa-consulting" target="_blank" rel="noreferrer" title="LinkedIn" aria-label="LinkedIn de CIPRESA" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white/85 hover:bg-white/20">
+                  {/* <a href="https://www.linkedin.com/company/cipresa-consulting" target="_blank" rel="noreferrer" title="LinkedIn" aria-label="LinkedIn de CIPRESA" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white/85 hover:bg-white/20">
                     <Linkedin className="h-4 w-4" />
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
