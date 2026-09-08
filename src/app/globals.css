@@ -182,7 +182,7 @@
 }
 .card-shine:hover::before {
   left: 125%;
-  background: #118708;
+  background: #062503;;
 }
 
 @media (prefers-reduced-motion: reduce) {
