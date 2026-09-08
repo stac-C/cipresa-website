@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
-import Link from 'next/link';
-import { ArrowRight, Cpu, Leaf, ShieldCheck, Sparkles, TrendingUp } from 'lucide-react';
+import { Leaf, ShieldCheck, Sparkles, TrendingUp } from 'lucide-react';
 
 const hero = {
   eyebrow: 'CIPRESA',
@@ -65,31 +64,6 @@ export function MarketingPageShell({ children }: { children: ReactNode }) {
         </div>
       </main>
 
-      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="rounded-[32px] border border-emerald-100 bg-[#0d5f08] p-8 text-white shadow-[0_20px_80px_-30px_rgba(17,135,8,0.35)] sm:p-10 lg:p-12">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-2xl">
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-sm font-medium text-emerald-100">
-                <Cpu className="h-4 w-4" />
-                Design professionnel
-              </div>
-              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                Un style harmonisé pour chaque page marketing
-              </h2>
-              <p className="mt-3 text-lg leading-8 text-emerald-50/90">
-                Les pages marketing présentent désormais un look plus soigné, une hiérarchie claire et un rendu plus engageant pour vos visiteurs.
-              </p>
-            </div>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-cipresa-700 transition hover:bg-emerald-50"
-            >
-              Nous contacter
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
