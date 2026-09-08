@@ -115,13 +115,13 @@ export function CoursesBrowser({ courses, categories, initialCategory }: Courses
           </div>
         </div>
 
-        <div className="sticky top-16 z-30 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800">
+        <div className="sticky top-16 z-30 min-w-0 max-w-full overflow-hidden bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide">
+            <div className="horizontal-scroll flex min-w-0 max-w-full items-center gap-2 overflow-x-auto overscroll-x-contain pb-1">
               <button
                 onClick={() => selectCategory(null)}
                 className={cn(
-                  'px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all',
+                  'shrink-0 px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all',
                   !selectedCategory ? 'bg-cipresa-500 text-white' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
                 )}
               >
@@ -132,7 +132,7 @@ export function CoursesBrowser({ courses, categories, initialCategory }: Courses
                   key={cat.id}
                   onClick={() => selectCategory(selectedCategory === cat.slug ? null : cat.slug)}
                   className={cn(
-                    'px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all flex items-center gap-1.5',
+                    'flex shrink-0 items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all',
                     selectedCategory === cat.slug ? 'bg-cipresa-500 text-white' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
                   )}
                 >
@@ -160,16 +160,16 @@ export function CoursesBrowser({ courses, categories, initialCategory }: Courses
             </div>
           )}
 
-          <div className="flex items-center justify-between mb-6">
-            <p className="text-sm text-gray-500">{filtered.length} cours trouvés</p>
-            <div className="flex items-center gap-3">
+          <div className="mb-6 flex min-w-0 max-w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p className="shrink-0 text-sm text-gray-500">{filtered.length} cours trouvés</p>
+            <div className="horizontal-scroll flex min-w-0 max-w-full items-center gap-3 overflow-x-auto overscroll-x-contain pb-1">
               <div className="hidden sm:flex items-center gap-1 bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
                 {(['grid', 'list'] as const).map((mode) => (
                   <button
                     key={mode}
                     onClick={() => setViewMode(mode)}
                     className={cn(
-                      'p-1.5 rounded-md transition-all',
+                      'shrink-0 p-1.5 rounded-md transition-all',
                       viewMode === mode ? 'bg-white dark:bg-gray-700 shadow-sm' : 'hover:bg-gray-200 dark:hover:bg-gray-700'
                     )}
                     title={mode === 'grid' ? 'Vue grille' : 'Vue liste'}
@@ -183,7 +183,7 @@ export function CoursesBrowser({ courses, categories, initialCategory }: Courses
                   key={opt}
                   onClick={() => setSortBy(opt)}
                   className={cn(
-                    'px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all',
+                    'shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all',
                     sortBy === opt ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
                   )}
                 >

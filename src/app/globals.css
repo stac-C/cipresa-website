@@ -97,7 +97,6 @@
     border: 0px solid rgba(17, 135, 8, 0.16);
     border-radius: 10px;
     box-shadow: 0 20px 50px rgba(17, 135, 8, 0.08);
-
   }
   .agri-hero {
     background: linear-gradient(135deg, #052b03 0%, #0f7606 46%, #2cab3f 100%);
@@ -122,6 +121,10 @@
   .text-balance { text-wrap: balance; }
   .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
   .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .horizontal-scroll { scrollbar-width: thin; scrollbar-color: rgba(17, 135, 8, 0.45) transparent; }
+  .horizontal-scroll::-webkit-scrollbar { height: 5px; }
+  .horizontal-scroll::-webkit-scrollbar-track { background: transparent; }
+  .horizontal-scroll::-webkit-scrollbar-thumb { background: rgba(17, 135, 8, 0.45); border-radius: 999px; }
   .line-clamp-2 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
   .line-clamp-3 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
   .bg-grid {
