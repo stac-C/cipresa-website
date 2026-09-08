@@ -75,7 +75,7 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
   .glass-card {
-    background: rgba(255,255,255,0.92);
+    background: rgba(255, 254, 254, 0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(17, 135, 8, 0.16);
@@ -85,17 +85,19 @@
     background: linear-gradient(135deg, rgba(244, 253, 245, 0.95) 0%, rgba(230, 248, 231, 0.95) 100%);
   }
   .green-panel {
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(255, 255, 255, 0);
     border: 1px solid rgba(17, 135, 8, 0.14);
-    box-shadow: 0 18px 45px rgba(17, 135, 8, 0.08);
+    box-shadow: 0 18px 45px rgba(17, 135, 8, 0.08); 
   }
   .agri-surface {
     background: linear-gradient(135deg, #f7fdf7 0%, #edf8ea 100%);
   }
   .agri-panel {
-    background: rgba(255, 255, 255, 0.96);
-    border: 1px solid rgba(17, 135, 8, 0.16);
+    background:  rgba(255, 255, 255, 0.96);
+    border: 0px solid rgba(17, 135, 8, 0.16);
+    border-radius: 10px;
     box-shadow: 0 20px 50px rgba(17, 135, 8, 0.08);
+
   }
   .agri-hero {
     background: linear-gradient(135deg, #052b03 0%, #0f7606 46%, #2cab3f 100%);
@@ -129,6 +131,13 @@
   .bg-dot {
     background-image: radial-gradient(rgba(17,135,8,0.12) 1px, transparent 1px);
     background-size: 24px 24px;
+  }
+  .marketing-main > .marketing-panel {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
   }
 }
 

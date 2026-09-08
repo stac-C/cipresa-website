@@ -58,8 +58,9 @@ export function MarketingPageShell({ children }: { children: ReactNode }) {
         </div>
       </section>
 
-      <main className="mx-auto -mt-8 max-w-7xl px-4 pb-10 sm:px-6 lg:px-8 lg:-mt-10">
-        <div className="rounded-[32px] border border-emerald-100 bg-white/95 p-6 shadow-[0_25px_90px_-30px_rgba(17,135,8,0.2)] backdrop-blur-sm sm:p-8 lg:p-10">
+
+      <main className="marketing-main">
+        <div className="marketing-panel rounded-[32px] border border-emerald-100 bg-white/95 p-6 shadow-[0_25px_90px_-30px_rgba(17,135,8,0.2)] backdrop-blur-sm sm:p-8 lg:p-10">
           {children}
         </div>
       </main>
