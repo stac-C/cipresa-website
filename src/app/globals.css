@@ -14,7 +14,7 @@
 
 @layer base {
   :root {
-    --font-poppins: "Trebuchet MS", "Segoe UI", sans-serif;
+    --font-poppins: "Poppins", sans-serif;
     --background: 135 40% 97%;
     --foreground: 140 18% 13%;
     --card: 0 0% 100%;

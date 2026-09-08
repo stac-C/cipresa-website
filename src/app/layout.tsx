@@ -1,10 +1,17 @@
 import type { Metadata } from 'next';
+import { Poppins } from 'next/font/google';
 import { cn } from '@/lib/utils/cn';
 import { Providers } from '@/components/providers';
 import { ShellContent } from '@/components/layout/shell-content';
 import { NavigationProgress } from '@/components/layout/navigation-progress';
 import './globals.css';
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  variable: '--font-poppins',
+
+  weight: ['300', '400', '500', '600', '700', '800'],
+});
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: {
@@ -29,7 +36,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   manifest: '/manifest.json',
-  icons: { icon: '/images/con-72x72.png', apple: '/images/con-72x72.png' },
+  icons: { icon: '/logo.png', apple: '/logo.png' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -57,7 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className={cn('font-sans min-h-screen bg-white dark:bg-gray-950')} suppressHydrationWarning>
+      <body className={cn(poppins.variable, 'font-sans min-h-screen bg-white dark:bg-gray-950')} suppressHydrationWarning>
         <Providers>
           <NavigationProgress />
           <ShellContent>{children}</ShellContent>

@@ -94,11 +94,11 @@ export const Footer = () => {
               <p className="text-[13px] font-medium text-emerald-50/90">Nos experts sont à votre écoute pour transformer vos idées en succès durable, avec une solution adaptée à votre fermet.</p>
             </div>
           </div>
-          <div className="flex flex-wrap gap-3">
-            <a href="https://wa.me/237656184596" className="rounded-[6px] bg-white px-6 py-3 text-[13px] font-black text-[#0b3f0b] shadow-[0_10px_30px_rgba(0,0,0,0.18)] transition hover:bg-emerald-50">
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <a href="https://wa.me/237656184596" className="inline-flex h-11 w-full items-center justify-center rounded-[6px] bg-white px-6 text-[13px] font-black text-[#0b3f0b] shadow-[0_10px_30px_rgba(0,0,0,0.18)] transition hover:bg-emerald-50 sm:w-[196px]">
               Discuter sur WhatsApp
             </a>
-            <Link href="/contact" className="inline-flex items-center rounded-[6px] border border-white/20 bg-white/10 px-6 py-3 text-[13px] font-black text-emerald-50 transition hover:bg-white/20">
+            <Link href="/contact" className="inline-flex h-11 w-full items-center justify-center rounded-[6px] border border-white/20 bg-white/10 px-6 text-[13px] font-black text-emerald-50 transition hover:bg-white/20 sm:w-[196px]">
               Nous contacter
             </Link>
           </div>
